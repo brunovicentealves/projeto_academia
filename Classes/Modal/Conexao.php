@@ -1,9 +1,9 @@
 <?php
-         $user = 'sql10328288';
-         $pass = 'vPXK8VxsuN';
+         $user = 'root';
+         $pass = '';
          try {
 
-          return $pdo =  new PDO('mysql:host=sql10.freemysqlhosting.net;dbname=sql10328288', $user, $pass);
+          return $pdo =  new PDO('mysql:host=localhost;dbname=academia', $user, $pass);
          } catch (PDOException $e) {
              echo 'Erro: '.$e->getMessage();
          }

@@ -66,7 +66,8 @@
         </li>
       </ul>
       <form class="form-inline mt-2 mt-md-0">
-        <button class="btn btn-outline-success my-2 my-sm-0" ><a href="./Classes/Controller/ControllerUsuario.php">Login</a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0" ><a href="../Projeto_Academia/Classes/view/Login.php">Login</a></button>
+          <!-- ./Classes/Controller/ControllerUsuario.php -->
       </form>
     </div>
   </nav>
@@ -82,8 +83,9 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"> <img src="images/carousel1.jpg" class="d-block w-100" alt="..."><rect width="100%" height="100%" fill="#777"/></svg>
         <div class="container">
+
           <div class="carousel-caption text-left">
             <h1>Example headline.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -92,7 +94,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"> <img src="images/carousel2.jpg" class="d-block w-100" alt="..."><rect width="100%" height="100%" fill="#777"/></svg>
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -102,7 +104,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"> <img src="images/carousel3.jpg" class="d-block w-100" alt="..."><rect width="100%" height="100%" fill="#777"/></svg>
         <div class="container">
           <div class="carousel-caption text-right">
             <h1>One more for good measure.</h1>
@@ -162,7 +164,7 @@
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"> <img src="images/foto1.jpg" class="d-block w-100" alt="acompanhamento"></svg>
       </div>
     </div>
 
@@ -174,7 +176,7 @@
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>
       <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><img src="images/foto2.jpg" class="d-block w-100" alt="treino monstados"><</svg>
       </div>
     </div>
 
@@ -186,7 +188,7 @@
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       </div>
       <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><img src="images/foto3.jpg" class="d-block w-100" alt="Comida saudavel"></svg>
       </div>
     </div>
 
