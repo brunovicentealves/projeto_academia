@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +37,7 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="../Controller/ControllerLogin.php" method="POST" >
 					<span class="login100-form-title p-b-43">
-						Vida +
+						<h3>Acesso Aluno</h3>
 					</span>
 					
 					
@@ -56,12 +59,17 @@
 
 					<div class="container-login100-form-btn">
 
-                        <input class="login100-form-btn" type=submit value="Login">
+                        <input class="btn btn-dark btn-lg btn-block"  style="background-color: #FF7F50;" type=submit value="Login">
 					</div>
 					
 					<div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-							or sign up using
+                            <?php
+                            if(isset($_SESSION['mensagem'])){
+                                echo $_SESSION['mensagem'];
+                                unset($_SESSION['mensagem']);
+                            }
+                            ?>
 						</span>
 					</div>
 

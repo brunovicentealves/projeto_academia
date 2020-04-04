@@ -2,10 +2,10 @@
 
 require_once 'Conexao.php';
 
-function logar($pdo,$usuario,$senha){
+function logarUsuario($pdo,$usuario,$senha){
 
 
-    $stmt = $pdo->prepare("SELECT user_name,user_password FROM usuario WHERE user_name=:usuario AND user_password =:senha LIMIT 1");
+    $stmt = $pdo->prepare("SELECT nome_usuario,senha_usuario FROM usuario WHERE nome_usuario=:usuario AND senha_usuario =:senha LIMIT 1");
 
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':senha', $senha);
@@ -13,8 +13,8 @@ function logar($pdo,$usuario,$senha){
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach( $users as $user){
-        $usuario=$user['user_name'];
-        $senha= $user['user_password'];
+        $usuario=$user['nome_usuario'];
+        $senha= $user['senha_usuario'];
     }
 
     if($users!= NULL){

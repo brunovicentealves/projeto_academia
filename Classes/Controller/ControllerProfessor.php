@@ -1,13 +1,13 @@
 <?php
 require_once 'Seguranca.php';
-require_once '../Modal/LoginUsuarioCrud.php';
+require_once '../Modal/LoginProfessorCrud.php';
 $usuario =$_POST['usuario'];
 $senha = $_POST['senha'];
 
 
 if(isset($usuario) && isset($senha)){
 
-    $resultado=logarUsuario($pdo,$usuario,$senha);
+    $resultado=logarProfessor($pdo,$usuario,$senha);
 
     if($usuario == $resultado[0] && $senha == $resultado[1]){
 
@@ -15,9 +15,10 @@ if(isset($usuario) && isset($senha)){
         $_SESSION['usuario']=$resultado[0];
     }else{
         $_SESSION['mensagem']=$resultado;
-        header("Location:../view/Login.php");
+        header("Location:../view/LoginProfessor.php");
     }
 }
+
 
 
 
