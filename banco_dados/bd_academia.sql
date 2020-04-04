@@ -77,8 +77,10 @@ id_tipo int,
 id_fica int
 );
 
--- -------------------
+-- -----------------------------
 -- TABELA TIPO TREINO DOS ALUNO
+-- -----------------------------
+
 CREATE TABLE tipo_treino(
 id_tipo_treino int AUTO_INCREMENT NOT NULL PRIMARY KEY,
 nome_tipo_treino varchar(100)
@@ -102,6 +104,7 @@ id_treino int
 -- --------------------------
 -- TABELA CARDAPIO DOS ALUNOS
 -- --------------------------
+
 CREATE TABLE cardapio(
 id_cardapio int  AUTO_INCREMENT NOT NULL PRIMARY KEY,
 descricao_cardapio varchar(100),
@@ -111,6 +114,7 @@ id_ficha int
 -- -----------------------
 -- TABELA DIETA DOS ALUNOS
 -- -----------------------
+
 CREATE TABLE dieta (
 id_dieta int AUTO_INCREMENT not null PRIMARY KEY,
 nome_dieta varchar(100),
