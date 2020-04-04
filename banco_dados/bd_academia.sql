@@ -53,7 +53,7 @@ id_usuario int
 );
 
 -- -------------------------
--- TABELA AVALIACAO DO ALUNO
+-- TABELA AVALIACAO DOS ALUNO
 -- -------------------------
 
 CREATE TABLE avaliacao(
@@ -63,6 +63,60 @@ altura double,
 imc double,
 rendimento varchar(100),
 id_ficha int
+);
+
+-- ------------------------
+-- TABELA TREINO DOS ALUNOS
+-- ------------------------
+
+CREATE TABLE treino (
+id_treino int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nome_treino varchar(100),
+descricao_treino varchar(100),
+id_tipo int,
+id_fica int
+);
+
+-- -------------------
+-- TABELA TIPO TREINO DOS ALUNO
+CREATE TABLE tipo_treino(
+id_tipo_treino int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nome_tipo_treino varchar(100)
+);
+
+-- --------------------------
+-- TABELA EXERCICIO DOS ALUNO
+-- --------------------------
+
+CREATE TABLE exercicio(
+id_exercicio int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+nome_exercicio varchar(100),
+serie varchar(45),
+repeticoes varchar(100),
+carga varchar(100),
+descanso varchar(100),
+descricao_exercicio varchar(100),
+id_treino int
+);
+
+-- --------------------------
+-- TABELA CARDAPIO DOS ALUNOS
+-- --------------------------
+CREATE TABLE cardapio(
+id_cardapio int  AUTO_INCREMENT NOT NULL PRIMARY KEY,
+descricao_cardapio varchar(100),
+id_ficha int
+);
+
+-- -----------------------
+-- TABELA DIETA DOS ALUNOS
+-- -----------------------
+CREATE TABLE dieta (
+id_dieta int AUTO_INCREMENT not null PRIMARY KEY,
+nome_dieta varchar(100),
+alimento varchar(45),
+quantidade varchar(45),
+id_cardapio int
 );
 
 
