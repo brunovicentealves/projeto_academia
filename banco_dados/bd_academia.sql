@@ -37,9 +37,9 @@ complemento varchar(100)
 -- ----------------------
 
 CREATE TABLE professor_usuario(
-id_professor_aluno int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+id_professor_usuario int AUTO_INCREMENT NOT NULL PRIMARY KEY,
 id_professor int,
-id_aluno int
+id_usuario int
 );
 
 -- ---------------------
@@ -73,8 +73,8 @@ CREATE TABLE treino (
 id_treino int AUTO_INCREMENT NOT NULL PRIMARY KEY,
 nome_treino varchar(100),
 descricao_treino varchar(100),
-id_tipo int,
-id_fica int
+id_tipo_treino int,
+id_ficha int
 );
 
 -- -----------------------------
@@ -122,7 +122,56 @@ alimento varchar(45),
 quantidade varchar(45),
 id_cardapio int
 );
+-- -------------------------------------------------
+-- RELACIONAMENTO  ENTRE AS TABELAS
+-- -------------------------------------------------
 
+-- -------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA FICHA E AVALIACAO
+-- -------------------------------------------------
+ALTER TABLE avaliacao ADD CONSTRAINT  FOREIGN KEY(id_ficha) REFERENCES ficha(id_ficha);
 
+-- -------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA FICHA E USUARIO
+-- -------------------------------------------------
+ALTER TABLE ficha ADD CONSTRAINT  FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario);
 
+-- ----------------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA PROFESSOR_USUARIO E USUARIO
+-- ----------------------------------------------------------
 
+ALTER TABLE professor_usuario ADD CONSTRAINT  FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario);
+
+-- -------------------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA PROFESSOR_USUARIO E PROFESSOR
+-- -------------------------------------------------------------
+ALTER TABLE professor_usuario ADD CONSTRAINT  FOREIGN KEY(id_professor) REFERENCES professor(id_professor);
+
+-- -------------------------------------
+-- RELACIONAMENTO  ENTRE TABELA TREINO E FICHA
+-- -------------------------------------
+
+ALTER TABLE treino ADD CONSTRAINT  FOREIGN KEY(id_ficha) REFERENCES ficha(id_ficha);
+
+-- ---------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA EXERCICIOS E TREINO
+-- ---------------------------------------------------
+
+ALTER TABLE exercicio ADD CONSTRAINT  FOREIGN KEY(id_treino) REFERENCES treino(id_treino);
+
+-- ---------------------------------------
+-- RELACIONAMENTO  ENTRE TABELA DIETA E CARDAPIO
+-- ---------------------------------------
+ALTER TABLE dieta ADD CONSTRAINT  FOREIGN KEY(id_cardapio) REFERENCES cardapio(id_cardapio);
+
+-- ----------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA TREINO E TIPO_TREINO
+-- ----------------------------------------------------
+
+ALTER TABLE treino ADD CONSTRAINT  FOREIGN KEY(id_tipo_treino) REFERENCES tipo_treino (id_tipo_treino);
+
+-- ----------------------------------------------------
+-- RELACIONAMENTO  ENTRE A TABELA CARDAPIO E FICHA
+-- ----------------------------------------------------
+
+ALTER TABLE cardapio ADD CONSTRAINT  FOREIGN KEY(id_ficha) REFERENCES ficha(id_ficha);
