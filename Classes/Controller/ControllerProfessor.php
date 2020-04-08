@@ -12,7 +12,7 @@ if(isset($usuario) && isset($senha)){
     if($usuario == $resultado[0] && $senha == $resultado[1]){
 
         header("Location:../view/painel.php");
-        $_SESSION['usuario']=$resultado[0];
+        $_SESSION['usuario']=$resultado[2];
     }else{
         $_SESSION['mensagem']=$resultado;
         header("Location:../view/LoginProfessor.php");

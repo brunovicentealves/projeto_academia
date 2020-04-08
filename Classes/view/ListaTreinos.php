@@ -1,5 +1,5 @@
 <?php
-
+require_once '../Controller/Seguranca.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
