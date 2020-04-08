@@ -4,8 +4,8 @@ require_once '../Modal/LoginUsuarioCrud.php';
 $usuario =$_POST['usuario'];
 $senha = $_POST['senha'];
 
-echo $usuario;
-;
+
+
 if(isset($usuario) && isset($senha)){
 
     $resultado=logarUsuario($pdo,$usuario,$senha);

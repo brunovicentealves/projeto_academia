@@ -15,6 +15,8 @@ require_once '../Controller/Seguranca.php';
 
 <?php include('../view/menu.php') ?>
 
+
+
 <?php include('../view/footer.php') ?>
 
 </body>

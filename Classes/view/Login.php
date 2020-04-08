@@ -64,12 +64,11 @@ session_start();
 					
 					<div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-                            <?php
-                            if(isset($_SESSION['mensagem'])){
-                                echo $_SESSION['mensagem'];
-                                unset($_SESSION['mensagem']);
-                            }
-                            ?>
+                            <h2><?php
+                                if(isset($_SESSION['mensagem'])){echo $_SESSION['mensagem'];
+                                    unset($_SESSION['mensagem']);
+                                }
+                                ?></h2>
 						</span>
 					</div>
 
