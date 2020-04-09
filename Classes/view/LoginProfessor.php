@@ -62,14 +62,19 @@ session_start();
                     <input class="btn btn-dark btn-lg btn-block"  style="background-color: #FF7F50;" type=submit value="Login">
                 </div>
 
+                <br>
+
+                <div class="container-login100-form-btn">
+                    <a href="CadastraProfessor.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>Cadastro</a>
+                </div>
+
                 <div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-                            <?php
-                            if(isset($_SESSION['mensagem'])){
-                                echo $_SESSION['mensagem'];
-                                unset($_SESSION['mensagem']);
-                            }
-                            ?>
+                            <h3><?php
+                                if(isset($_SESSION['mensagem'])){echo $_SESSION['mensagem'];
+                                    unset($_SESSION['mensagem']);
+                                }
+                                ?></h3>
 						</span>
                 </div>
 

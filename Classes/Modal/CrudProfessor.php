@@ -4,7 +4,7 @@ require_once 'Conexao.php';
 
 function findall($pdo){
 
-    $sql = "select * from usuario";
+    $sql = "select * from professor";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute();
@@ -13,11 +13,11 @@ function findall($pdo){
 }
 
 
-function salve ($pdo,$nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado){
+function salve ($pdo,$nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref){
     try {
 
-        $inserir = $pdo->prepare("INSERT INTO usuario (nome_usuario,sobrenome_usuario,email_usuario,senha_usuario,endereco,numero,cep,complemento,pais,cidade,estado) 
-VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11)");
+        $inserir = $pdo->prepare("INSERT INTO professor (nome_professor,sobrenome_professor,email_professor,senha_professor,endereco,numero,cep,complemento,pais,cidade,estado,cref_professor) 
+VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11,:valor12)");
 
         $inserir->bindValue(":valor1",$nome);
         $inserir->bindValue(":valor2",$sobrenome);
@@ -30,6 +30,7 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
         $inserir->bindValue(":valor9",$pais);
         $inserir->bindValue(":valor10",$cidade);
         $inserir->bindValue(":valor11",$estado);
+        $inserir->bindValue(":valor12",$cref);
 
       //  $inserir->execute();
 
