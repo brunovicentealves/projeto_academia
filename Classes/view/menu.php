@@ -18,6 +18,9 @@ require_once '../Controller/Seguranca.php';
             <li class="nav-item active">
                 <a class="nav-link" href="../view/ListaUsuarios.php">Usuarios</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="../view/ListaUsuarios.php">avaliação</a>
+            </li>
         </ul>
         <div class="btn-group dropleft">
             <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
