@@ -14,7 +14,12 @@ email_usuario varchar(45),
 senha_usuario varchar(100),
 endereco varchar(100),
 cep varchar(10),
-complemento varchar(100)
+complemento varchar(100),
+sobrenome_usuario varchar(100),
+cidade varchar(100),
+pais varchar(100),
+estado varchar(10),
+numero int
 );
 
 -- -----------------
@@ -29,7 +34,12 @@ email_professor varchar(45),
 senha_professor varchar(45),
 endereco varchar(100),
 cep varchar(10),
-complemento varchar(100)
+complemento varchar(100),
+sobrenome_professor varchar(100),
+cidade varchar(100),
+pais varchar(100),
+estado varchar(10),
+numero int
 );
 
 -- ----------------------
