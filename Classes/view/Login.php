@@ -54,9 +54,6 @@ session_start();
                         <span class="label-input100">Password</span>
                     </div>
 
-
-			        <h2>TESTE</h2>
-
 					<div class="container-login100-form-btn">
 
                         <input class="btn btn-dark btn-lg btn-block"  style="background-color: #FF7F50;" type=submit value="Login">
