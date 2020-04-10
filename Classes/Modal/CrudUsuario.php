@@ -2,19 +2,11 @@
 
 require_once 'Conexao.php';
 
-function findall($pdo){
-
-    $sql = "select * from usuario";
-    $stmt = $pdo->prepare($sql);
-
-    $stmt->execute();
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($users);
-}
 
 
-function salve ($pdo,$nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado){
+function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado){
     try {
+        $pdo=conexao();
 
         $inserir = $pdo->prepare("INSERT INTO usuario (nome_usuario,sobrenome_usuario,email_usuario,senha_usuario,endereco,numero,cep,complemento,pais,cidade,estado) 
 VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11)");
@@ -31,7 +23,7 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
         $inserir->bindValue(":valor10",$cidade);
         $inserir->bindValue(":valor11",$estado);
 
-      //  $inserir->execute();
+       $inserir->execute();
 
         return "Usuario Cadastrado com Sucesso";
 
@@ -43,8 +35,9 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
 
 }
 
-function excluir($pdo,$id){
+function excluir($id){
     try {
+        $pdo=conexao();
 
         $deletar = $pdo->prepare("DELETE FROM usuario WHERE id_user= :id");
 
@@ -65,6 +58,9 @@ function excluir($pdo,$id){
 function atualizar($pdo,$usuario,$senha,$id){
 
     try {
+
+        $pdo=conexao();
+
         $atualizar = $pdo->prepare("UPDATE usuario SET user_name =:usuario , user_password=:senha WHERE id_user =:id");
 
 

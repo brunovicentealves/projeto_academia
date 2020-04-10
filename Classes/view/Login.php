@@ -35,7 +35,7 @@ session_start();
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="../Controller/ControllerLogin.php" method="POST" >
+				<form class="login100-form validate-form" action="../Controller/ControllerLoginUsuario.php" method="POST" >
 					<span class="login100-form-title p-b-43">
 						<h3>Acesso Aluno</h3>
 					</span>

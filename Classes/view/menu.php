@@ -1,5 +1,7 @@
 <?php
 require_once '../Controller/Seguranca.php';
+require_once '../Controller/ControllerPerfil.php';
+
 ?>
 <nav class="navbar navbar-expand-lg  navbar-dark"  style="background-color: #FF7F50;">
     <a class="navbar-brand" href="../view/painel.php">Vida +</a>
@@ -9,18 +11,34 @@ require_once '../Controller/Seguranca.php';
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="../view/ListaTreinos.php">Treinos <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Dietas</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="../view/ListaUsuarios.php">Usuarios</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="../view/ListaUsuarios.php">avaliação</a>
-            </li>
+            <?php
+            if($_SESSION['acesso']=="professor"){
+                ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../view/ListaUsuarios.php">Alunos</a>
+                </li>
+                <?php
+            }
+            ?>
+            <?php
+            if($_SESSION['acesso']=="usuario"){
+                ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../view/ListaUsuarios.php">Ficha</a>
+                </li>
+                <?php
+            }
+            ?>
+            <?php
+            if($_SESSION['acesso']=="usuario"){
+                ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../view/ListaUsuarios.php">Avaliação</a>
+                </li>
+                <?php
+            }
+            ?>
+
         </ul>
         <div class="btn-group dropleft">
             <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,8 +70,15 @@ require_once '../Controller/Seguranca.php';
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <?php
+                $perfil=carregaPerfil($_SESSION['id_usuario'],$_SESSION['acesso']);
+                ?>
+                <h2><?php echo $perfil[0] ; ?></h2>
+                <h2><?php echo $perfil[1] ; ?></h2>
+               <?php
+                ?>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             </div>

@@ -1,6 +1,6 @@
 <?php
 require_once 'Seguranca.php';
-require_once '../Modal/CrudUser.php';
+require_once '../Modal/CrudUsuario.php';
 $nome =$_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
 $email = $_POST['email'];
@@ -13,9 +13,9 @@ $pais = $_POST['pais'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 
-salve($pdo,$nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado);
 
-$_SESSION['mensagem']="CADASTRO EFETUADO COM SUCESSO";
+
+$_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado);
 header("Location:../view/Login.php");
 
 

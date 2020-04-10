@@ -32,9 +32,9 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
         $inserir->bindValue(":valor11",$estado);
         $inserir->bindValue(":valor12",$cref);
 
-      //  $inserir->execute();
+        $inserir->execute();
 
-        return "Usuario Cadastrado com Sucesso";
+        return " Cadastro Efetuado com sucesso";
 
     }catch (PDOException $e){
 
