@@ -8,14 +8,17 @@
     <title>Cadastro Aluno</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 </head>
 <body>
 
 
-<form action="../Controller/ControllerCrudProfessor.php" method="post">
+<form name="form1" action="../Controller/ControllerCrudProfessor.php" method="post">
     <div align="center">
     <br><br>
-    <h2>CADASTRO DE PROFESSORES</h2>
+    <h2> <B> <U>CADASTRO DE PROFESSORES</U> </B> </h2>
         <p>Informações com o (*) são de preenchimentos obrigatórios para o cadastro</p>
     <br>
     </div>
@@ -23,23 +26,31 @@
     <div class="container">
 
      <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Nome</label>
-                <input name="nome" type="text" placeholder="*" required class="form-control" id="inputEmail4">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Sobrenome</label>
-                <input name="sobrenome" placeholder="*" required type="text" class="form-control" id="inputPassword4">
-            </div>
+         <div class="form-group col-md-5">
+             <label for="inputEmail4">Nome</label>
+             <input name="nome" type="text" placeholder="*" required class="form-control" id="nome">
+         </div>
+         <div class="form-group col-md-5">
+             <label for="inputPassword4">Sobrenome</label>
+             <input name="sobrenome" placeholder="*" required type="text" class="form-control" id="inputPassword4">
+         </div>
+         <div class="form-group col-md-2">
+             <label for="inputPassword4">Telefone Celular</label>
+             <input name="telefone" placeholder="*" required type="text" class="form-control" id="telefone">
+         </div>
      </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputEmail4">E-mail</label>
             <input name="email" type="email" placeholder="*" required class="form-control" id="inputEmail4">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-3">
             <label for="inputPassword4">Senha</label>
-            <input name="senha" type="password" placeholder="*" required class="form-control" id="inputPassword4">
+            <input name="senha" type="password" placeholder="*" required class="form-control" id="senha">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Repita a Senha</label>
+            <input name="repita_senha" type="password" placeholder="*" required class="form-control" id="repita_senha">
         </div>
     </div>
         <div class="form-row">
@@ -53,7 +64,7 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="inputPassword4">CEP</label>
-                <input name="cep" type="number" class="form-control" id="inputPassword4">
+                <input name="cep" type="text" class="form-control" id="cep">
             </div>
             <div class="form-group col-md-2">
                 <label for="inputPassword4">Complemento</label>
@@ -75,12 +86,29 @@
         </div>
         <div class="form-group col-md-3">
             <label for="inputZip">CREF</label>
-            <input name="cref" type="text" class="form-control" id="inputZip">
+            <input name="cref" type="number" class="form-control" id="inputZip">
         </div>
     </div>
         <div align="center">
-            <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block">Salvar</button>
+            <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block" onclick="return validar()">Salvar</button>
         </div>
+
+        <script>
+            function validar() {
+                var senha = form1.senha.value;
+                var rep_senha = form1.repita_senha.value;
+
+                if (senha != rep_senha) {
+                    alert('Senhas não Conferem, favor verificar!');
+                    form1.nome.focus(); return false;
+                }
+            }
+        </script>
+
+        <script type="text/javascript">
+            $("#cep").mask("000.000.000-00");
+            $("#telefone").mask("(00) 0.0000-0000");
+        </script>
     </div>
 </form>
 

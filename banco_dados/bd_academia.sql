@@ -19,7 +19,8 @@ complemento varchar(100),
 cidade varchar(100),
 pais varchar(100),
 estado varchar(10),
-numero int
+numero int,
+telefone varchar(15)
 );
 
 -- -----------------
@@ -39,7 +40,8 @@ complemento varchar(100),
 cidade varchar(100),
 pais varchar(100),
 estado varchar(10),
-numero int
+numero int,
+telefone varchar(15)
 );
 
 -- ----------------------
