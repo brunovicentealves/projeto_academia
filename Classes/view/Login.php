@@ -37,7 +37,7 @@ session_start();
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="../Controller/ControllerLoginUsuario.php" method="POST" >
 					<span class="login100-form-title p-b-43">
-						<h3>Acesso Aluno</h3>
+						<h3> <b> <u>Acesso Aluno</u> </b> </h3>
 					</span>
 					
 					
@@ -46,13 +46,15 @@ session_start();
 						<span class="focus-input100"></span>
 						<span class="label-input100">Email</span>
 					</div>
-					
+
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
                         <input class="input100" type="password" name="senha">
                         <span class="focus-input100"></span>
                         <span class="label-input100">Password</span>
                     </div>
+
+                    <br>
 
 					<div class="container-login100-form-btn">
 
@@ -63,7 +65,7 @@ session_start();
                     <br>
 
                    <div class="container-login100-form-btn">
-                        <a href="CadastraUsuario.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>Cadastro</a>
+                        <a href="CadastraUsuario.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>CADASTRE-SE</a>
                        </div>
 
 

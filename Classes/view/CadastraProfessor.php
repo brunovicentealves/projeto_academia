@@ -18,7 +18,7 @@
 <form name="form1" action="../Controller/ControllerCrudProfessor.php" method="post">
     <div align="center">
     <br><br>
-    <h2>CADASTRO DE PROFESSORES</h2>
+    <h2> <B> <U>CADASTRO DE PROFESSORES</U> </B> </h2>
         <p>Informações com o (*) são de preenchimentos obrigatórios para o cadastro</p>
     <br>
     </div>
@@ -28,7 +28,7 @@
      <div class="form-row">
          <div class="form-group col-md-5">
              <label for="inputEmail4">Nome</label>
-             <input name="nome" type="text" placeholder="*" required class="form-control" id="inputEmail4">
+             <input name="nome" type="text" placeholder="*" required class="form-control" id="nome">
          </div>
          <div class="form-group col-md-5">
              <label for="inputPassword4">Sobrenome</label>
@@ -86,7 +86,7 @@
         </div>
         <div class="form-group col-md-3">
             <label for="inputZip">CREF</label>
-            <input name="cref" type="text" class="form-control" id="inputZip">
+            <input name="cref" type="number" class="form-control" id="inputZip">
         </div>
     </div>
         <div align="center">

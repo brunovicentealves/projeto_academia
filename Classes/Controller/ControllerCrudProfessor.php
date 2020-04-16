@@ -2,7 +2,6 @@
 require_once 'Seguranca.php';
 require_once '../Modal/CrudProfessor.php';
 
-
 $nome =$_POST['nome'];
 $sobrenome = $_POST['sobrenome'];
 $email = $_POST['email'];

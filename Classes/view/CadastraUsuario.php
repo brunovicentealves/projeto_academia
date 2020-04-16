@@ -18,7 +18,7 @@
 <form name="form1" action="../Controller/ControllerCrudUsuario.php" method="post">
     <div align="center">
     <br><br>
-    <h2>CADASTRO DE ALUNOS</h2>
+    <h2> <b> <u>CADASTRO DE ALUNOS</u> </b> </h2>
         <p>Informações com o (*) são de preenchimentos obrigatórios para o cadastro</p>
     <br>
     </div>

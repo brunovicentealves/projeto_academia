@@ -37,7 +37,7 @@ session_start();
         <div class="wrap-login100">
             <form class="login100-form validate-form" action="../Controller/ControllerLoginProfessor.php" method="POST" >
 					<span class="login100-form-title p-b-43">
-						<h2>Acesso Professor</h2>
+						<h2> <b> <u>Acesso Professor</u> </b> </h2>
 					</span>
 
 
@@ -54,7 +54,7 @@ session_start();
                     <span class="label-input100">Password</span>
                 </div>
 
-
+                <br>
 
 
                 <div class="container-login100-form-btn">
@@ -65,7 +65,7 @@ session_start();
                 <br>
 
                 <div class="container-login100-form-btn">
-                    <a href="CadastraProfessor.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>Cadastro</a>
+                    <a href="CadastraProfessor.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>CADASTRE-SE</a>
                 </div>
 
                 <div class="text-center p-t-46 p-b-20">
@@ -89,7 +89,7 @@ session_start();
                 </div>
             </form>
 
-            <div class="login100-more" style="background-image: url('../../images/bg-01.jpg');">
+            <div class="login100-more" style="background-image: url('../../images/bg-02.jpg');">
             </div>
         </div>
     </div>

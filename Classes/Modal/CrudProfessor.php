@@ -13,16 +13,17 @@ function findall($pdo){
 }
 
 
-function salve ($pdo,$nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref,$telefone){
+function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref,$telefone){
     try {
+        $pdo=conexao();
 
         $inserir = $pdo->prepare("INSERT INTO professor (nome_professor,sobrenome_professor,email_professor,senha_professor,endereco,numero,cep,complemento,pais,cidade,estado,cref_professor,telefone) 
-VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11,:valor12,:valor13)");
+VALUES (:valor1,:valor2,:valor3,MD5($senha),:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11,:valor12,:valor13)");
 
         $inserir->bindValue(":valor1",$nome);
         $inserir->bindValue(":valor2",$sobrenome);
         $inserir->bindValue(":valor3",$email);
-        $inserir->bindValue(":valor4",$senha);
+       // $inserir->bindValue(":valor4",$senha);
         $inserir->bindValue(":valor5",$endereco);
         $inserir->bindValue(":valor6",$numero);
         $inserir->bindValue(":valor7",$cep);

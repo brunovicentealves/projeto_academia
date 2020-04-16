@@ -9,12 +9,12 @@ function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemen
         $pdo=conexao();
 
         $inserir = $pdo->prepare("INSERT INTO usuario (nome_usuario,sobrenome_usuario,email_usuario,senha_usuario,endereco,numero,cep,complemento,pais,cidade,estado,telefone) 
-VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11,:valor12)");
+VALUES (:valor1,:valor2,:valor3,MD5($senha),:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11,:valor12)");
 
         $inserir->bindValue(":valor1",$nome);
         $inserir->bindValue(":valor2",$sobrenome);
         $inserir->bindValue(":valor3",$email);
-        $inserir->bindValue(":valor4",$senha);
+      //$inserir->bindValue(":valor4",$senha);
         $inserir->bindValue(":valor5",$endereco);
         $inserir->bindValue(":valor6",$numero);
         $inserir->bindValue(":valor7",$cep);
