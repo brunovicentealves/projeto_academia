@@ -12,10 +12,10 @@ require_once '../Controller/ControllerPerfil.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <?php
-            if($_SESSION['acesso']=="professor"){
+            if($_SESSION['acesso']=="usuario"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../view/ListaUsuarios.php">Alunos</a>
+                    <a class="nav-link" href="../view/UsuarioProfessor.php">Alunos</a>
                 </li>
                 <?php
             }
