@@ -15,11 +15,12 @@ $pais = $_POST['pais'];
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];
 $cref = $_POST['cref'];
+$telefone = $_POST['telefone'];
 
 
 
 
-$_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref);
+$_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref,$telefone);
 header("Location:../view/LoginProfessor.php");
 
 

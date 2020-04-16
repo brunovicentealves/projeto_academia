@@ -4,12 +4,12 @@ require_once 'Conexao.php';
 
 
 
-function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado){
+function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone){
     try {
         $pdo=conexao();
 
-        $inserir = $pdo->prepare("INSERT INTO usuario (nome_usuario,sobrenome_usuario,email_usuario,senha_usuario,endereco,numero,cep,complemento,pais,cidade,estado) 
-VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11)");
+        $inserir = $pdo->prepare("INSERT INTO usuario (nome_usuario,sobrenome_usuario,email_usuario,senha_usuario,endereco,numero,cep,complemento,pais,cidade,estado,telefone) 
+VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,:valor10,:valor11,:valor12)");
 
         $inserir->bindValue(":valor1",$nome);
         $inserir->bindValue(":valor2",$sobrenome);
@@ -22,6 +22,7 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
         $inserir->bindValue(":valor9",$pais);
         $inserir->bindValue(":valor10",$cidade);
         $inserir->bindValue(":valor11",$estado);
+        $inserir->bindValue(":valor12",$telefone);
 
        $inserir->execute();
 
