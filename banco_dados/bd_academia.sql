@@ -12,6 +12,7 @@ id_usuario int AUTO_INCREMENT  NOT NULL PRIMARY KEY,
 nome_usuario varchar(100),
 sobrenome_usuario varchar(100),
 email_usuario varchar(45),
+telefone varchar(15),
 senha_usuario varchar(100),
 endereco varchar(100),
 cep varchar(10),
@@ -19,8 +20,7 @@ complemento varchar(100),
 cidade varchar(100),
 pais varchar(100),
 estado varchar(10),
-numero int,
-telefone varchar(15)
+numero int
 );
 
 -- -----------------
@@ -33,6 +33,7 @@ nome_professor varchar(100),
 sobrenome_professor varchar(100),
 cref_professor varchar(45),
 email_professor varchar(45),
+telefone varchar(15),
 senha_professor varchar(45),
 endereco varchar(100),
 cep varchar(10),
@@ -40,8 +41,7 @@ complemento varchar(100),
 cidade varchar(100),
 pais varchar(100),
 estado varchar(10),
-numero int,
-telefone varchar(15)
+numero int
 );
 
 -- ----------------------

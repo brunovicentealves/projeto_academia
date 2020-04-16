@@ -12,7 +12,7 @@ require_once '../Controller/ControllerPerfil.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <?php
-            if($_SESSION['acesso']=="usuario"){
+            if($_SESSION['acesso']=="professor"){
                 ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="../view/UsuarioProfessor.php">Alunos</a>
@@ -24,7 +24,7 @@ require_once '../Controller/ControllerPerfil.php';
             if($_SESSION['acesso']=="usuario"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../view/ListaUsuarios.php">Ficha</a>
+                    <a class="nav-link" href=""></a>
                 </li>
                 <?php
             }
@@ -33,7 +33,7 @@ require_once '../Controller/ControllerPerfil.php';
             if($_SESSION['acesso']=="usuario"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../view/ListaUsuarios.php">Avaliação</a>
+                    <a class="nav-link" href=""></a>
                 </li>
                 <?php
             }
@@ -48,13 +48,13 @@ require_once '../Controller/ControllerPerfil.php';
                 }
                 ?>
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item"  data-toggle="modal" data-target="#exampleModal">Perfil</a>
                 <a class="dropdown-item" href="../Controller/Sair.php">Sair</a>
             </div>
         </div>
-
-
+        <br>
+        <br>
 
     </div>
 </nav>
