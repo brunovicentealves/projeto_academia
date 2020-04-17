@@ -7,7 +7,7 @@ if(isset($_POST['nome']) && isset($_POST['email'])){
     $nome =$_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = MD5($_POST['senha'], row);
     $endereco = $_POST['endereco'];
     $numero = $_POST['numero'];
     $cep = $_POST['cep'];
