@@ -5,8 +5,11 @@ require_once '../Modal/ProfessorUsuarioCrud.php';
 
 if(isset($_GET['id'])){
 
-    $id=$_GET['id'];
-    echo $id;
+    $idUsuario=$_GET['id'];
+    $idProfessor=$_SESSION['id_usuario'];
+    $resultado= vincularAlunoProfessor($idProfessor,$idUsuario);
+   $_SESSION['mensagem']=$resultado;
+    header("Location:../view/UsuarioProfessor.php");
 }
 
 

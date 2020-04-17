@@ -1,6 +1,6 @@
 <?php
 require_once '../Controller/Seguranca.php';
-require_once '../Controller/ControllerProfessorUsuario.php';
+require_once '../Controller/ControllerCrudUsuario.php';
 ?>
 <!doctype html>
 <html lang="br">
@@ -35,37 +35,38 @@ if(isset($_SESSION['mensagem'])) {
 }
 ?>
 <div class="text-center">
-    <h2>Usuarios Não vinculados</h2>
+    <h2>Meus Alunos </h2>
 </div>
 <div class="container-fluid">
     <div class="table">
-    <table class="table-striped table-responsive-xl" id="minhaTabela">
+        <table class="table-striped table-responsive-xl" id="minhaTabela">
 
-        <thead>
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">Nome usuario</th>
-            <th scope="col">Email usuario</th>
-            <th scope="col">Ações</th>
-        </tr>
-        </thead>
-        <!-- tras consulta do usuarios não vinculados ao professor-->
-        <?php $resultado=usuariosNaoVinculado();
-        if(isset($resultado)){
-        foreach ($resultado as $linhas){
-            ?>
-        <tbody>
-        <tr>
-            <td><?=$linhas['id_usuario']?></td>
-            <td><?=$linhas['nome_usuario']?></td>
-            <td><?=$linhas['email_usuario']?></td>
-            <td><a href="../Controller/ControllerProfessorUsuario.php?id=<?=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>
-        </tr>
-        </tbody>
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nome usuario</th>
+                <th scope="col">Email usuario</th>
+                <th scope="col">Ações</th>
+            </tr>
+            </thead>
+            <!-- tras consulta do usuarios não vinculados ao professor-->
+            <?php $resultado=meuAluno();
+            if(isset($resultado)){
+                foreach ($resultado as $linhas){
+                    ?>
+                    <tbody>
+                    <tr>
+                        <td><?=$linhas['id_usuario']?></td>
+                        <td><?=$linhas['nome_usuario']?></td>
+                        <td><?=$linhas['email_usuario']?></td>
+                        <td><a href="" class="btn btn-secondary">Ficha do Aluno</a></td>
+                        <!-- ../Controller/ControllerProfessorUsuario.php?id=<?//=$linhas['id_usuario']?> -->
+                    </tr>
+                    </tbody>
 
-        <?php }}?>
-    </table>
-</div>
+                <?php }}?>
+        </table>
+    </div>
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -80,7 +81,7 @@ if(isset($_SESSION['mensagem'])) {
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
-    $(document).ready(function(){
+  $(document).ready(function(){
         $('#minhaTabela').DataTable({
             "language": {
                 "info":"Mostrando _START_ a _END_ de _TOTAL_ registros",
@@ -103,7 +104,7 @@ if(isset($_SESSION['mensagem'])) {
             "order": [[ 0, "asc" ]],
             "pageLength": 300,
             "columnDefs": [
-                { "width": "50%", "targets":6 }
+                { "width": "70%", "targets":6 }
             ]
         } );
     });

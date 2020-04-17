@@ -11,20 +11,23 @@ require_once '../Controller/ControllerPerfil.php';
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+
+            <!-- nivel de acesso do sistema para alunos e professores -->
+
             <?php
             if($_SESSION['acesso']=="professor"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../view/UsuarioProfessor.php">Alunos</a>
+                    <a class="nav-link" href="../view/UsuarioProfessor.php">Usuários</a>
                 </li>
                 <?php
             }
             ?>
             <?php
-            if($_SESSION['acesso']=="usuario"){
+            if($_SESSION['acesso']=="professor"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href=""></a>
+                    <a class="nav-link" href="../view/MeuAluno.php">Meus Alunos </a>
                 </li>
                 <?php
             }
@@ -59,7 +62,7 @@ require_once '../Controller/ControllerPerfil.php';
     </div>
 </nav>
 
-<!--  Janela Modal -->
+<!--  Janela Modal  que mostra os dados do usuario logado no sistema -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

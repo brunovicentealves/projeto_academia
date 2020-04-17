@@ -3,7 +3,7 @@
 require_once 'Conexao.php';
 
 
-
+// salva  cadastro do usuario no sistema
 function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone){
     try {
         $pdo=conexao();
@@ -34,6 +34,20 @@ VALUES (:valor1,:valor2,:valor3,MD5($senha),:valor5,:valor6,:valor7,:valor8,:val
     }
 
 
+}
+
+// busca os alunos do professor logado ao sistema
+function buscarUsuario($id_professor){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT u.id_usuario,u.nome_usuario,u.email_usuario FROM usuario AS u JOIN professor_usuario AS pu ON u.id_usuario = pu.id_usuario WHERE  id_professor=:id_professor;");
+    $stmt->bindValue(":id_professor",$id_professor);
+    $stmt->execute();
+
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if($users!= NULL){
+        return $users;
+    }
 }
 
 function excluir($id){
