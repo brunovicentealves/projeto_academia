@@ -56,6 +56,14 @@ session_start();
 
                     <br>
 
+                    <?php
+                    if(isset($_SESSION['mensagem']))
+                        {
+                           echo "<a href=\"RecuperaSenhaAluno.php\" type=submit> <b> <u>Esqueceu sua Senha?</u> </b> </a>";
+                           echo "<br>";
+                        }
+                    ?>
+
 					<div class="container-login100-form-btn">
 
                         <input class="btn btn-dark btn-lg btn-block"  style="background-color: #FF7F50;" type=submit value="Login">
@@ -68,17 +76,19 @@ session_start();
                         <a href="CadastraUsuario.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>CADASTRE-SE</a>
                        </div>
 
-
-					<div class="text-center p-t-46 p-b-20">
+                    <div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
                             <h3><?php
-                                if(isset($_SESSION['mensagem'])){echo $_SESSION['mensagem'];
+                                if(isset($_SESSION['mensagem']))
+                                {
+                                    echo $_SESSION['mensagem'];
                                     unset($_SESSION['mensagem']);
-
                                 }
                                 ?></h3>
 						</span>
-					</div>
+                    </div>
+
+
 
 					<div class="login100-form-social flex-c-m">
 						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
