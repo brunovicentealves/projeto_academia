@@ -17,6 +17,7 @@ if(isset($_POST['nome']) && isset($_POST['email'])){
     $estado = $_POST['estado'];
     $telefone = $_POST['telefone'];
     $_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone);
+
     header("Location:../view/Login.php");
 }
 

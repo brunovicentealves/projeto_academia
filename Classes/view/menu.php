@@ -36,7 +36,7 @@ require_once '../Controller/ControllerPerfil.php';
             if($_SESSION['acesso']=="usuario"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href=""></a>
+                    <a class="nav-link" href="../view/MinhaFichaAluno.php">Minha Ficha</a>
                 </li>
                 <?php
             }

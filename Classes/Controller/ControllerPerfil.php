@@ -1,7 +1,7 @@
 <?php
 require_once 'Seguranca.php';
 
-require_once '../Modal/crudPerfil.php';
+require_once '../Modal/CrudPerfil.php';
 
 function carregaPerfil($id,$usuario){
 
