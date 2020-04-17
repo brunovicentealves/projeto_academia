@@ -1,7 +1,7 @@
 <?php
 require_once 'Seguranca.php';
 require_once '../Modal/LoginUsuarioCrud.php';
-require_once '../Modal/CrudFicha.php.php';
+require_once '../Modal/CrudFicha.php';
 
 $usuario =$_POST['usuario'];
 $senha = $_POST['senha'];

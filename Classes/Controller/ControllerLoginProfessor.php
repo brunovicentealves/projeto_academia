@@ -9,6 +9,7 @@ if(isset($usuario) && isset($senha)){
 
     $resultado=logarProfessor($usuario,$senha);
 
+
     if($usuario == $resultado[0] && $senha == $resultado[1]){
 
         header("Location:../view/painel.php");

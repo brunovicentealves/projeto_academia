@@ -3,7 +3,7 @@
 require_once 'Conexao.php';
 
 
-// salva  cadastro do usuario no sistema
+// salva usuario no sistema
 function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone){
     try {
         $pdo=conexao();
