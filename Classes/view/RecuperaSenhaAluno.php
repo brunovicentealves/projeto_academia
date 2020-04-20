@@ -37,17 +37,13 @@
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
 
-        <div class="text-center p-t-46 p-b-20">
-						<span class="txt2">
-                            <h3><?php
-                                if(isset($_SESSION['mensagem']))
-                                {
-                                    echo $_SESSION['mensagem'];
-                                    unset($_SESSION['mensagem']);
-                                }
-                                ?></h3>
-						</span>
-        </div>
+            <h3><?php
+                if(isset($_SESSION['mensagem']))
+                {
+                    echo $_SESSION['mensagem'];
+                    unset($_SESSION['mensagem']);
+                }
+            ?></h3>
 
         <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
     </form>

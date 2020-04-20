@@ -65,7 +65,7 @@ function BuscaEmail($nome,$email,$teste){
     try {
 
         $pdo=conexao();
-        $stmt = $pdo->query("SELECT * FROM usuario where nome_usuario = '$nome' and email_usuario = '$email';");
+        $stmt = $pdo->query("SELECT * FROM usuario where email_usuario = '$email';");
 
         foreach ($stmt as $row){
             $teste = true;

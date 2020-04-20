@@ -2,6 +2,9 @@
 require_once 'Seguranca.php';
 require_once '../Modal/CrudUsuario.php';
 
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$teste = false;
 // cadastra os usuarios no sitema
 if(isset($_POST['nome']) && isset($_POST['email'])){
     $nome =$_POST['nome'];
@@ -17,9 +20,18 @@ if(isset($_POST['nome']) && isset($_POST['email'])){
     $estado = $_POST['estado'];
     $telefone = $_POST['telefone'];
 
-    $_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone);
 
-    header("Location:../view/Login.php");
+    //echo $nome.$email;
+    BuscaEmail($nome,$email,$teste);
+    $teste1 = BuscaEmail($nome,$email,$teste);
+    if ($teste1 == 2){
+        echo "E-mail ja cadastrado para outro usuario";
+    }else if ("USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!"){
+        $_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone);
+
+        header("Location:../view/Login.php");
+    }
+
 }
 
 // mostra os alunos vinculados ao professor
