@@ -12,6 +12,7 @@ require_once 'Conexao.php';
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
     foreach( $users as $user){
         $idUsuario=$user['id_usuario'];
         $usuario=$user['email_usuario'];

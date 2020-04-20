@@ -37,7 +37,7 @@ $teste1 = BuscaEmail($nome,$email,$teste);
         $Mailer->AddAddress($email);
         $Mailer->IsHTML(true);
         $Mailer->Subject = "Nova Senha";
-        $Mailer->Body = "Senhor <b>$nome</b>"." Uma nova senha foi gerada para você, sua nova senha é: <b><u>$novaSenha</u></b>"."<br><br> Favor não responder a este e-mail";
+        $Mailer->Body = "Senhor(a) <b>$nome</b>"." Uma nova senha foi gerada para você, sua nova senha é: <b><u>$novaSenha</u></b>"."<br><br> Favor não responder a este e-mail"."<br>Equipe De Treinos WEB LTDA";
 
         if ($Mailer->Send()){
             $erro = false;
