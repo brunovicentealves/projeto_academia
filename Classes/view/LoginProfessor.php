@@ -56,6 +56,13 @@ session_start();
 
                 <br>
 
+                <?php
+                if(isset($_SESSION['mensagem']))
+                {
+                    echo "<a href=\"RecuperaSenhaProfessor.php\" type=submit> <b> <u>Esqueceu sua Senha?</u> </b> </a>";
+                    echo "<br>";
+                }
+                ?>
 
                 <div class="container-login100-form-btn">
 
@@ -67,6 +74,7 @@ session_start();
                 <div class="container-login100-form-btn">
                     <a href="CadastraProfessor.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>CADASTRE-SE</a>
                 </div>
+
 
                 <div class="text-center p-t-46 p-b-20">
 						<span class="txt2">

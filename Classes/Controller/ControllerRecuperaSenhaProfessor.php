@@ -1,6 +1,6 @@
 <?php
 require_once 'Seguranca.php';
-require_once '../Modal/CrudUsuario.php';
+require_once '../Modal/CrudProfessor.php';
 //require 'mailer/PHPMailerAutoload.php';
 
 $nome = $_POST['nome'];
@@ -37,7 +37,7 @@ $teste1 = BuscaEmail($nome,$email,$teste);
         $Mailer->AddAddress($email);
         $Mailer->IsHTML(true);
         $Mailer->Subject = "Nova Senha";
-     $Mailer->Body = "Senhor <b>$nome</b>"." Uma nova senha foi gerada para você, sua nova senha é: <b><u>$novaSenha</u></b>"."<br><br> Favor não responder a este e-mail";
+        $Mailer->Body = "Senhor <b>$nome</b>"." Uma nova senha foi gerada para você, sua nova senha é: <b><u>$novaSenha</u></b>"."<br><br> Favor não responder a este e-mail";
 
         if ($Mailer->Send()){
             $erro = false;
@@ -48,10 +48,10 @@ $teste1 = BuscaEmail($nome,$email,$teste);
      //   var_dump($Mailer);
 
      $_SESSION['mensagem']=RecuperaSenha($nome,$email,$senha);
-     header("Location:../view/Login.php");
+     header("Location:../view/LoginProfessor.php");
  }else if ($teste1 == "USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!"){
      $_SESSION['mensagem']=BuscaEmail($nome,$email,$teste);
-     header("Location:../view/Login.php");
+     header("Location:../view/LoginProfessor.php");
  }
 
 function generatePassword($qtyCaraceters = 8){

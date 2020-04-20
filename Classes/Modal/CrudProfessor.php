@@ -46,6 +46,55 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
 
 }
 
+
+function RecuperaSenha($nome,$email,$senha){
+
+    try {
+
+        $pdo=conexao();
+
+        $atualizar = $pdo->prepare("UPDATE professor SET senha_professor =:senha WHERE email_professor =:email");
+
+        // $atualizar = $pdo->prepare("UPDATE usuario SET senha_usuario =:senha WHERE nome_usuario =:usuario and email_usuario =:email");
+        // $atualizar->bindValue(":usuario", $nome);
+
+        $atualizar->bindValue(":email", $email);
+
+        $atualizar->bindValue(":senha", $senha);
+
+        $atualizar->execute();
+
+        return "A nova senha foi enviada para o seu e-mail";
+
+    }catch (PDOException $e){
+        return $e->getMessage();
+    }
+
+}
+
+function BuscaEmail($nome,$email,$teste){
+    try {
+
+        $pdo=conexao();
+        $stmt = $pdo->query("SELECT * FROM professor where email_professor = '$email';");
+
+        foreach ($stmt as $row){
+            $teste = true;
+        }
+
+
+        if ( $teste == false){
+            return "USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!";
+        }else if ( $teste == true){
+            return "2";
+        }
+
+
+    } catch (PDOException $e){
+        return $e->getMessage();
+    }
+}
+
 function excluir($pdo,$id){
     try {
 
