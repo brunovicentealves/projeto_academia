@@ -49,9 +49,9 @@ session_start();
 
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="senha">
+                        <input class="input100" type="password" name="senha" id="senha">
                         <span class="focus-input100"></span>
-                        <span class="label-input100">Password</span>
+                        <span class="label-input100">Senha</span>
                     </div>
 
                     <br>
