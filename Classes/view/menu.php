@@ -52,6 +52,7 @@ require_once '../Controller/ControllerPerfil.php';
                 ?>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="../view/ConfiguraçõesUsuarios.php">Configurações</a>
                 <a class="dropdown-item"  data-toggle="modal" data-target="#exampleModal">Perfil</a>
                 <a class="dropdown-item" href="../Controller/Sair.php">Sair</a>
             </div>
