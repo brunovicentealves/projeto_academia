@@ -1,10 +1,12 @@
 <?php
 require_once 'Seguranca.php';
 require_once '../Modal/CrudUsuario.php';
+if(isset($_POST['nome'])&& isset($_POST['email'])){
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $teste = false;
+}
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$teste = false;
 // cadastra os usuarios no sitema
 if(isset($_POST['nome']) && isset($_POST['email'])){
     $nome =$_POST['nome'];
