@@ -4,7 +4,7 @@ require_once '../Modal/LoginUsuarioCrud.php';
 require_once '../Modal/CrudFicha.php';
 
 $usuario =$_POST['usuario'];
-$senha = md5($_POST['senha'], row);
+$senha = md5($_POST['senha'],row);
 
 
 
@@ -29,7 +29,7 @@ if(isset($usuario) && isset($senha)){
             criarFichaAluno($idUsuario);
         }
 
-        header("Location:../view/painel.php");
+        header("Location:../view/Painel.php");
 
     }else{
         $_SESSION['mensagem']=$resultado;

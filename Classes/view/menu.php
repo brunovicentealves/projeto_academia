@@ -4,7 +4,7 @@ require_once '../Controller/ControllerPerfil.php';
 
 ?>
 <nav class="navbar navbar-expand-lg  navbar-dark"  style="background-color: #FF7F50;">
-    <a class="navbar-brand" href="../view/painel.php">Vida +</a>
+    <a class="navbar-brand" href="Painel.php">Vida +</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,7 +52,7 @@ require_once '../Controller/ControllerPerfil.php';
                 ?>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="../view/perfil.php">Perfil</a>
+                <a class="dropdown-item" href="Perfil.php">Perfil</a>
                 <a class="dropdown-item" href="../Controller/Sair.php">Sair</a>
             </div>
         </div>

@@ -12,7 +12,7 @@ if(isset($usuario) && isset($senha)){
 
     if($usuario == $resultado[0] && $senha == $resultado[1]){
 
-        header("Location:../view/painel.php");
+        header("Location:../view/Painel.php");
         $_SESSION['usuario']=$resultado[2];
 
         //controla o acesso o tipo de acesso no menu do sistema

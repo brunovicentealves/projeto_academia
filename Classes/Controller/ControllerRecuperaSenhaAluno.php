@@ -7,7 +7,7 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 
 $novaSenha = generatePassword(6);
-$senha = MD5($novaSenha);
+$senha = md5($novaSenha);
 
 $teste = false;
 

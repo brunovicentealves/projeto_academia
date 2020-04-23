@@ -35,7 +35,8 @@
         <label for="inputPassword" class="sr-only">E-Mail</label>
         <input name="email" type="email" id="email" class="form-control" placeholder="E-Mail" required>
         <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+        <button  style="background-color: #FF7F50;" class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+        <a   href="../view/LoginProfessor.php" style="background-color: #FF7F50;" class="btn btn-lg btn-primary btn-block" >Voltar</a>
 
             <h3><?php
                 if(isset($_SESSION['mensagem']))
