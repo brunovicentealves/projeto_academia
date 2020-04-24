@@ -48,10 +48,10 @@ $teste1 = BuscaEmail($nome,$email,$teste);
      //   var_dump($Mailer);
 
      $_SESSION['mensagem']=RecuperaSenha($nome,$email,$senha);
-     header("Location:../view/Login.php");
+     header("Location:../view/LoginUsuario.php");
  }else if ($teste1 == "USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!"){
      $_SESSION['mensagem']=BuscaEmail($nome,$email,$teste);
-     header("Location:../view/Login.php");
+     header("Location:../view/LoginUsuario.php");
  }
 
 function generatePassword($qtyCaraceters = 8){

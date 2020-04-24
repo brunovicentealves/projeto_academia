@@ -36,7 +36,7 @@
         <input name="email" type="email" id="email" class="form-control" placeholder="E-Mail" required>
         <br>
         <button style="background-color: #FF7F50;" class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-        <a   href="../view/Login.php" style="background-color: #FF7F50;" class="btn btn-lg btn-primary btn-block" >Voltar</a>
+        <a href="LoginUsuario.php" style="background-color: #FF7F50;" class="btn btn-lg btn-primary btn-block" >Voltar</a>
             <h3><?php
                 if(isset($_SESSION['mensagem']))
                 {

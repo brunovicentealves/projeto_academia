@@ -33,7 +33,7 @@ if(isset($usuario) && isset($senha)){
 
     }else{
         $_SESSION['mensagem']=$resultado;
-        header("Location:../view/Login.php");
+        header("Location:../view/LoginUsuario.php");
     }
 }
 

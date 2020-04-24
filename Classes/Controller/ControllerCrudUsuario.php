@@ -30,7 +30,7 @@ if(isset($_POST['nome']) && isset($_POST['email'])){
         echo "E-mail ja cadastrado para outro usuario";
     }else if ("USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!"){
         $_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone);
-        header("Location:../view/Login.php");
+        header("Location:../view/LoginUsuario.php");
     }
 
 }

@@ -64,7 +64,7 @@
               </li>
               <li class="nav">
 
-       <a href="../Projeto_Academia/Classes/view/Login.php" class="nav-link"><span class="btn btn-outline-dark">Acesso Aluno</span></a>
+       <a href="Classes/view/LoginUsuario.php" class="nav-link"><span class="btn btn-outline-dark">Acesso Aluno</span></a>
               </li>
           </ul>
       </form>
