@@ -15,7 +15,7 @@ require_once '../Controller/ControllerCrudUsuario.php';
     <title>Usuário</title>
 </head>
 <body>
-<?php include('../view/menu.php') ?>
+<?php include('../view/Menu.php') ?>
 <br>
 <br>
 <?php

@@ -15,7 +15,7 @@ require_once '../Controller/ControllerPerfil.php';
     <title>Usuário</title>
 </head>
 <body>
-<?php include('../view/menu.php') ?>
+<?php include('../view/Menu.php') ?>
 
 <?php
 if(isset( $_SESSION['mensagem-alterar'])) {

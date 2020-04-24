@@ -4,7 +4,7 @@ require_once '../Controller/ControllerPerfil.php';
 
 ?>
 <nav class="navbar navbar-expand-lg  navbar-dark"  style="background-color: #FF7F50;">
-    <a class="navbar-brand" href="Painel.php">Vida +</a>
+    <a class="navbar-brand" href="Painel.php"><img src="../../images/Logo-sistema.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,11 +36,21 @@ require_once '../Controller/ControllerPerfil.php';
             if($_SESSION['acesso']=="usuario"){
                 ?>
                 <li class="nav-item active">
+                    <a class="nav-link" href="../view/AvaliacaoUsuario.php">Avaliações</a>
+                </li>
+                <?php
+            }
+            ?>
+            <?php
+            if($_SESSION['acesso']=="usuario"){
+                ?>
+                <li class="nav-item active">
                     <a class="nav-link" href="../view/MinhaFichaAluno.php">Minha Ficha</a>
                 </li>
                 <?php
             }
             ?>
+
 
         </ul>
         <div class="btn-group dropleft">

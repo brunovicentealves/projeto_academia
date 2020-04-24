@@ -10,7 +10,7 @@ require_once '../Controller/Seguranca.php';
 </head>
 <body>
 
-<?php include('../view/menu.php') ?>
+<?php include('../view/Menu.php') ?>
 
 
 

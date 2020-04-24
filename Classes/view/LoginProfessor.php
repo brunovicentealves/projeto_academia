@@ -53,30 +53,27 @@ session_start();
                     <span class="focus-input100"></span>
                     <span class="label-input100">Password</span>
                 </div>
-
                 <br>
-
-                <?php
-                if(isset($_SESSION['mensagem']))
-                {
-                    echo "<a href=\"RecuperaSenhaProfessor.php\" type=submit> <b> <u>Esqueceu sua Senha?</u> </b> </a>";
-                    echo "<br>";
-                }
-                ?>
-
                 <div class="container-login100-form-btn">
-
                     <input class="btn btn-dark btn-lg btn-block"  style="background-color: #FF7F50;" type=submit value="Login">
                 </div>
-
                 <br>
-
                 <div class="container-login100-form-btn">
                     <a href="CadastraProfessor.php" class="btn btn-dark btn-lg btn-block" style="background-color: #FF7F50;" type=submit>CADASTRE-SE</a>
                 </div>
-
-
                 <div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+                            <?php
+                            if(isset($_SESSION['mensagem']))
+                            {
+                                echo "<a href=\"RecuperaSenhaProfessor.php\" type=submit> <b> <u>Esqueceu sua Senha?</u> </b> </a>";
+                                echo "<br>";
+                            }
+                            ?>
+
+                        </span>
+                </div>
+                <div class="text-center p-t-46 p-b-15">
 						<span class="txt2">
                             <h3><?php
                                 if(isset($_SESSION['mensagem'])){echo $_SESSION['mensagem'];

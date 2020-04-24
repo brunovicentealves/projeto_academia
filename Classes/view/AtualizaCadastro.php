@@ -17,7 +17,7 @@ require_once '../Controller/ControllerPerfil.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 </head>
 <body>
-<?php include('../view/menu.php') ?>
+<?php include('../view/Menu.php') ?>
 
 <form name="form1" action="../Controller/ControllerPerfil.php" method="post">
     <div align="center">
