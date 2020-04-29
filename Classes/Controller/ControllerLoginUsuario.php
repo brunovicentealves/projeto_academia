@@ -1,5 +1,5 @@
 <?php
-require_once 'Seguranca.php';
+require_once 'Session.php';
 require_once '../Modal/LoginUsuarioCrud.php';
 require_once '../Modal/CrudFicha.php';
 
@@ -14,7 +14,7 @@ if(isset($usuario) && isset($senha)){
 
     //verifica se usuario  existe no sistema
     if($usuario == $resultado[0] && $senha == $resultado[1]){
-
+        $_SESSION['logado']=true;
         $_SESSION['usuario']=$resultado[2];
         //controla o acesso o tipo de acesso no menu do sistema
         $_SESSION['acesso']="usuario";

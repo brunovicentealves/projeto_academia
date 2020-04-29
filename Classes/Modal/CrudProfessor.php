@@ -84,7 +84,7 @@ function BuscaEmail($nome,$email,$teste){
 
 
         if ( $teste == false){
-            return "USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!";
+            return "1";
         }else if ( $teste == true){
             return "2";
         }

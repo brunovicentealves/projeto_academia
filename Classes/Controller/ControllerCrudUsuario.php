@@ -1,5 +1,5 @@
 <?php
-require_once 'Seguranca.php';
+require_once 'Session.php';
 require_once '../Modal/CrudUsuario.php';
 if(isset($_POST['nome'])&& isset($_POST['email'])){
     $nome = $_POST['nome'];

@@ -1,4 +1,5 @@
 <?php
+require_once '../Controller/Session.php';
 require_once '../Controller/Seguranca.php';
 ?>
 <!DOCTYPE html>

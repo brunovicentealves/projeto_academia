@@ -1,5 +1,9 @@
+<?php
+session_start();
+
+?>
 <!doctype html>
-<html lang="en">
+<html lang="br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"

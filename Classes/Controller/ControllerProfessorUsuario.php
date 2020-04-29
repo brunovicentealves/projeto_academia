@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Seguranca.php';
+require_once 'Session.php';
 require_once '../Modal/ProfessorUsuarioCrud.php';
 
 //vincula o professor ao aluno

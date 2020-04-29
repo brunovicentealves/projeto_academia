@@ -1,5 +1,5 @@
 <?php
-require_once 'Seguranca.php';
+require_once 'Session.php';
 require_once '../Modal/CrudUsuario.php';
 //require 'mailer/PHPMailerAutoload.php';
 
@@ -7,14 +7,14 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 
 $novaSenha = generatePassword(6);
-$senha = md5($novaSenha);
+$senha = md5($novaSenha,row);
 
 $teste = false;
 
 
 BuscaEmail($nome,$email,$teste);
-$teste1 = BuscaEmail($nome,$email,$teste);
- if ($teste1 == 2){
+$resultado = BuscaEmail($nome,$email,$teste);
+ if ($resultado == 2){
 
      // Incluir classe PHPMailer
      include_once 'PHPMailer/class.smtp.php';
@@ -41,17 +41,17 @@ $teste1 = BuscaEmail($nome,$email,$teste);
 
         if ($Mailer->Send()){
             $erro = false;
-            echo 'E-Mail enviado.';
+            $_SESSION['mensagem']=RecuperaSenha($nome,$email,$senha);
+            header("Location:../view/LoginUsuario.php");
         } else {
-            echo 'Mensagem NÃO enviada.';
+            $_SESSION['mensagem']="Problema para Enviar o E-mail";
+            header("Location:../view/RecuperaSenhaAluno.php");
         }
-     //   var_dump($Mailer);
 
-     $_SESSION['mensagem']=RecuperaSenha($nome,$email,$senha);
-     header("Location:../view/LoginUsuario.php");
- }else if ($teste1 == "USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!"){
-     $_SESSION['mensagem']=BuscaEmail($nome,$email,$teste);
-     header("Location:../view/LoginUsuario.php");
+ }else if ($resultado == 1){
+
+     $_SESSION['mensagem']="Usuário não Cadastrado no Sistema";
+     header("Location:../view/RecuperaSenhaAluno.php");
  }
 
 function generatePassword($qtyCaraceters = 8){
