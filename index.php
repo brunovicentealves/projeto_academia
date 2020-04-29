@@ -113,17 +113,17 @@
       <div class="col-lg-4">
        <img  class="rounded-circle border border-dark" src="images/treino-logo.png">
         <h2>Treino</h2>
-        <p>Acompanhe seus Treinos e Dieta e avaliações atráves do app</p>
+        <p>Acompanhe seus Treinos de forma rápida e fácil, com apenas um login de distância</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
           <img  class="rounded-circle border border-dark" src="images/dieta-logo.png">
         <h2>Dietas</h2>
-        <p>Acompanhe sua dietas conforme seu treinos </p>
+        <p>Acompanhe sua dieta para conseguir aquele corpo que tanto deseja, com apenas um login de distância </p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
           <img  class="rounded-circle border border-dark" src="images/avaliacao-logo.png">
         <h2>Avaliações</h2>
-        <p>Acompanhe suas avaliações e veja se seu esforço esta gerando resultados</p>
+        <p>Acompanhe suas avaliações e veja se seu esforço esta gerando resultados, acompanhe suas metas e informações nutricionais</p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -134,8 +134,8 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Professores. <span class="text-muted">Qualificados</span></h2>
-        <p class="lead">Tenha Professores Qualificados para montar e analisar o seu treino para que você tenha  Um resultado desejado.</p>
+        <h2 class="featurette-heading">Profissionais. <span class="text-muted">Qualificados</span></h2>
+        <p class="lead">Tenha Professores Qualificados para montar e analisar o seu treino com o proposito de conquistar a saúde que tanto deseja.</p>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"> <img src="images/foto1.jpg" class="d-block w-100" alt="acompanhamento"></svg>
@@ -147,7 +147,7 @@
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Treinos <span class="text-muted"></span></h2>
-        <p class="lead">Acompanhe seu treinos pelo app sem precisar carregar papeis e imprimir , mais praticidade no seu dia-a-dia </p>
+        <p class="lead">Acompanhe seu treinos sem precisar carregar papeis e imprimir, mais praticidade no seu dia-a-dia e menos desgaste no ambiente</p>
       </div>
       <div class="col-md-5 order-md-1">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><img src="images/foto2.jpg" class="d-block w-100" alt="treino monstados"><</svg>
@@ -157,7 +157,7 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">Saúde <span class="text-muted"></span></h2>
-        <p class="lead">Tenha acompanhamento com nutricionista e tenha uma dieta regrada e focadas para seu treino,tendo uma maior resultado. l</p>
+        <p class="lead">Tenha acompanhamento com nutricionista e tenha uma dieta regrada e focadas para seu treino,tendo uma maior resultado.</p>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="100" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><img src="images/foto3.jpg" class="d-block w-100" alt="Comida saudavel"></svg>
@@ -173,7 +173,12 @@
 
   <!-- FOOTER -->
   <footer class="container" >
-    <p ><img src="images/Suporte.jpg"></p>
+
+          <p class="text-center">Telefone Suporte <b>(51) 3365-6477</b> </p>
+          <p class="text-center">E-Mail <b>treinosweb@gmail.com</b></p>
+
+      <p class="text-center"><img src="images/Suporte.jpg"></p>
+
     <p class="text-center">&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>

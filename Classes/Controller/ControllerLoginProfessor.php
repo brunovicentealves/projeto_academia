@@ -2,7 +2,7 @@
 require_once 'Session.php';
 require_once '../Modal/LoginProfessorCrud.php';
 $usuario =$_POST['usuario'];
-$senha = md5($_POST['senha'], row);
+$senha = md5($_POST['senha']);
 
 
 if(isset($usuario) && isset($senha)){
