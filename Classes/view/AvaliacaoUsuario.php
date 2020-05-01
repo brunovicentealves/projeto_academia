@@ -16,6 +16,9 @@ require_once '../Controller/ControllerAvaliacao.php';
 </head>
 <body>
 <?php include('../view/Menu.php') ?>
+<br>
+<br>
+<br>
 <?php
 if(isset($_SESSION['mensagem_avaliacao'])) {
     ?>
@@ -32,6 +35,8 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
     <?php
 }
 ?>
+<br>
+<br>
 <br>
 <br>
 <div class="text-center">
@@ -67,7 +72,9 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
                     <tr>
                         <td>Avaliacao</td>
                         <td><?=$linhas['data_avaliacao']?></td>
-                        <td><a href="../Controller/ControllerProfessorUsuario.php?id=<?=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>
+                       <td><a href=""><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;<a href=""><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a></td>
+
+                        <!--<td><a href="../Controller/ControllerProfessorUsuario.php?id=<?//=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>-->
                     </tr>
                     </tbody>
 

@@ -19,7 +19,9 @@ require_once '../Controller/ControllerPerfil.php';
 </head>
 <body>
 <?php include('../view/Menu.php') ?>
-
+<br>
+<br>
+<br>
 <form name="form1" action="../Controller/ControllerAvaliacao.php" method="post">
     <div align="center">
         <br><br>

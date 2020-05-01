@@ -18,6 +18,8 @@ require_once '../Controller/ControllerCrudUsuario.php';
 <?php include('../view/Menu.php') ?>
 <br>
 <br>
+<br>
+<br>
 <?php
 if(isset($_SESSION['mensagem'])) {
     ?>

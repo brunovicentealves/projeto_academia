@@ -17,7 +17,9 @@ require_once '../Controller/ControllerPerfil.php';
 </head>
 <body>
 <?php include('../view/Menu.php') ?>
-
+<br>
+<br>
+<br>
 <?php
 if(isset( $_SESSION['mensagem-alterar'])) {
 ?>
@@ -33,6 +35,8 @@ if(isset( $_SESSION['mensagem-alterar'])) {
 <?php
 }
 ?>
+<br>
+<br>
 <br>
 <br>
 <div class="container">

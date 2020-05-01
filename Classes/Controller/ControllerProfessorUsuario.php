@@ -14,6 +14,6 @@ if(isset($_GET['id'])){
 
 // busca o usuario que não esta vinculado com algum professor
 function usuariosNaoVinculado(){
-    $resultado=buscarAunoNaoAssociado();
+    $resultado=buscarAlunoNaoAssociado();
      return $resultado;
 };

@@ -19,6 +19,8 @@ require_once '../Controller/ControllerProfessorUsuario.php';
 <?php include('../view/Menu.php') ?>
 <br>
 <br>
+<br>
+<br>
 <?php
 if(isset($_SESSION['mensagem'])) {
     ?>
