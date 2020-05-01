@@ -15,10 +15,11 @@ if(isset($usuario) && isset($senha)){
 
         $_SESSION['logado']=true;
         $_SESSION['usuario']=$resultado[2];
+        $_SESSION['sobrenome_usuario']=$resultado[3];
 
         //controla o acesso o tipo de acesso no menu do sistema
         $_SESSION['acesso']="professor";
-        $_SESSION['id_usuario']=$resultado[3];
+        $_SESSION['id_usuario']=$resultado[4];
         header("Location:../view/Painel.php");
     }else{
         $_SESSION['mensagem']=$resultado;

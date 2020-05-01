@@ -57,8 +57,8 @@ require_once '../Controller/ControllerPerfil.php';
         <div class="btn-group dropleft">
             <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php
-                if(isset($_SESSION['usuario'])){
-                    echo $_SESSION['usuario'];
+                if(isset($_SESSION['usuario']) && isset($_SESSION['sobrenome_usuario'])){
+                    echo $_SESSION['usuario']," ",$_SESSION['sobrenome_usuario'];
                 }
                 ?>
             </button>

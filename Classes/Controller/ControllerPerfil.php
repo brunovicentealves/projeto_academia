@@ -23,7 +23,7 @@ function carregaPerfil($id,$usuario){
 // verifica se é usuario ou professor e altera senha
 if(isset($_POST['senha'])){
 
-    $senha = md5($_POST['senha'],row);
+    $senha = md5($_POST['senha']);
 
     if($_SESSION['acesso']== "usuario"){
 

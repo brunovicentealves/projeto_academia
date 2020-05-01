@@ -4,18 +4,20 @@ require_once 'Conexao.php';
 
 function buscaFichaAluno($id){
     $pdo=conexao();
-    $stmt = $pdo->prepare("SELECT id_usuario FROM ficha WHERE id_usuario=:id_usuario LIMIT 1");
+    $stmt = $pdo->prepare("SELECT id_ficha,id_usuario FROM ficha WHERE id_usuario=:id_usuario LIMIT 1");
     $stmt->bindValue(":id_usuario",$id);
     $stmt->execute();
 
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach( $users as $user){
-        $id=$user['id_usuario'];
+        $id_usuario=$user['id_usuario'];
+        $id_ficha=$user['id_ficha'];
     }
     if($users!= NULL){
-        return $id;
+        return array($id_usuario,$id_ficha);
     }
 }
+
 
 
 function  criarFichaAluno($idUsuario){

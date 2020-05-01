@@ -1,5 +1,6 @@
 <?php
 require_once '../Controller/Session.php';
+require_once '../Controller/Seguranca.php';
 require_once '../Controller/ControllerPerfil.php';
 ?>
 <!doctype html>

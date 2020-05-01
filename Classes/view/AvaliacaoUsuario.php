@@ -1,6 +1,6 @@
 <?php
 require_once '../Controller/Session.php';
-require_once '../Controller/ControllerProfessorUsuario.php';
+require_once '../Controller/ControllerAvaliacao.php';
 ?>
 <!doctype html>
 <html lang="br">
@@ -16,15 +16,13 @@ require_once '../Controller/ControllerProfessorUsuario.php';
 </head>
 <body>
 <?php include('../view/Menu.php') ?>
-<br>
-<br>
 <?php
-if(isset($_SESSION['mensagem'])) {
+if(isset($_SESSION['mensagem_avaliacao'])) {
     ?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
         <?php
-        echo $_SESSION['mensagem'];
-        unset($_SESSION['mensagem']);
+        echo $_SESSION['mensagem_avaliacao'];
+        unset($_SESSION['mensagem_avaliacao']);
 
         ?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -34,31 +32,41 @@ if(isset($_SESSION['mensagem'])) {
     <?php
 }
 ?>
+<br>
+<br>
 <div class="text-center">
     <h2>Avaliações</h2>
 </div>
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+          <a href="CadastraAvaliacao.php"  style="background-color: #FF7F50;" class="btn btn-dark">Cadastrar</a>
+        </div>
+        <div class="col-6">
+
+        </div>
+    </div>
+    <br>
     <div class="table">
         <table class="table-striped table-responsive-xl" id="minhaTabela">
 
             <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">Nome usuario</th>
-                <th scope="col">Email usuario</th>
+
+                <th scope="col">Avaliacao</th>
+                <th scope="col">Data Avaliacao</th>
                 <th scope="col">Ações</th>
             </tr>
             </thead>
             <!-- tras consulta do usuarios não vinculados ao professor-->
-            <?php $resultado=usuariosNaoVinculado();
+            <?php $resultado=buscarAvaliacao();
             if(isset($resultado)){
                 foreach ($resultado as $linhas){
                     ?>
                     <tbody>
                     <tr>
-                        <td><?=$linhas['id_usuario']?></td>
-                        <td><?=$linhas['nome_usuario']?></td>
-                        <td><?=$linhas['email_usuario']?></td>
+                        <td>Avaliacao</td>
+                        <td><?=$linhas['data_avaliacao']?></td>
                         <td><a href="../Controller/ControllerProfessorUsuario.php?id=<?=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>
                     </tr>
                     </tbody>

@@ -5,7 +5,7 @@ require_once 'Conexao.php';
  function logarUsuario($usuario,$senha){
      $pdo=conexao();
 
-    $stmt = $pdo->prepare("SELECT id_usuario,email_usuario,senha_usuario,nome_usuario FROM usuario WHERE email_usuario=:usuario AND senha_usuario =:senha LIMIT 1");
+    $stmt = $pdo->prepare("SELECT id_usuario,email_usuario,senha_usuario,nome_usuario,sobrenome_usuario FROM usuario WHERE email_usuario=:usuario AND senha_usuario =:senha LIMIT 1");
 
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':senha', $senha);
@@ -18,10 +18,11 @@ require_once 'Conexao.php';
         $usuario=$user['email_usuario'];
         $senha= $user['senha_usuario'];
         $nomelogin=$user['nome_usuario'];
+        $sobrenomelogin=$user['sobrenome_usuario'];
     }
 
     if($users!= NULL){
-        return array($usuario,$senha,$nomelogin,$idUsuario);
+        return array($usuario,$senha,$nomelogin,$sobrenomelogin,$idUsuario);
     }else{
 
         return "Usuario ou senha incorretos";
