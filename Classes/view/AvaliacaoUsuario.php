@@ -58,9 +58,11 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
             <thead>
             <tr>
 
-                <th scope="col">Avaliacao</th>
-                <th scope="col">Data Avaliacao</th>
-                <th scope="col">Ações</th>
+                <th style='width: 20%;'>Avaliacao</th>
+                <th style='width: 40%;'>Data Avaliacao</th>
+                <th style='width: 1%;'>Excluir</th>
+                <th style='width: 1%;'>visualizar</th>
+                <th style='width: 1%;'>Editar</th>
             </tr>
             </thead>
             <!-- tras consulta do usuarios não vinculados ao professor-->
@@ -70,9 +72,12 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
                     ?>
                     <tbody>
                     <tr>
-                        <td>Avaliacao</td>
+                        <td><?=$_SESSION['usuario'],"",$_SESSION['sobrenome_usuario']?></td>
                         <td><?=$linhas['data_avaliacao']?></td>
-                       <td><a href=""><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;<a href=""><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a></td>
+                       <td><a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_avaliacao']?>&acao=excluir"><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;
+                        <td> <a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_avaliacao']?>&acao=visualizar"><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a>&nbsp;</td>
+                        <td>  <a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_avaliacao']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
+                       </td>
 
                         <!--<td><a href="../Controller/ControllerProfessorUsuario.php?id=<?//=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>-->
                     </tr>
@@ -118,7 +123,7 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
             "order": [[ 0, "asc" ]],
             "pageLength": 300,
             "columnDefs": [
-                { "width": "50%", "targets":6 }
+                { "width": "40%", "targets":2 }
             ]
         } );
     });
