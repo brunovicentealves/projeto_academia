@@ -61,8 +61,7 @@ if(isset($_SESSION['mensagem'])) {
                         <td><?=$linhas['id_usuario']?></td>
                         <td><?=$linhas['nome_usuario']?></td>
                         <td><?=$linhas['email_usuario']?></td>
-                        <td><a href="" class="btn btn-secondary">Ficha do Aluno</a></td>
-                        <!-- ../Controller/ControllerProfessorUsuario.php?id=<?//=$linhas['id_usuario']?> -->
+                        <td><a href="../Controller/ControllerFichaUsuario.php?acao=index&id=<?=$linhas['id_usuario']?>" class="btn btn-secondary">Ficha do Aluno</a></td>
                     </tr>
                     </tbody>
 

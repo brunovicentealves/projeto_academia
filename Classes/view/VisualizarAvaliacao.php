@@ -168,16 +168,6 @@ if(isset($_GET['id'])){
                 </div>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-10">
-
-            </div>
-            <div class="form-group col-md-2">
-
-                <a href="../view/AvaliacaoUsuario.php"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block" >voltar</a>
-            </div>
-
-        </div>
     </div>
     <script type="text/javascript">
         $("#altura").mask("0.00");

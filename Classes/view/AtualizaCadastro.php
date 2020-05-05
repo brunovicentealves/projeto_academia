@@ -91,11 +91,7 @@ require_once '../Controller/ControllerPerfil.php';
             <div class="form-group col-md-8">
 
             </div>
-            <div class="form-group col-md-2">
-
-                <a href="../view/Perfil.php"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block" >voltar</a>
-            </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-4">
                 <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block"  >Atualizar</button>
             </div>
         </div>
