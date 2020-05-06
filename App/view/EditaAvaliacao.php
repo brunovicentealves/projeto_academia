@@ -2,6 +2,7 @@
 require_once '../Controller/Session.php';
 require_once '../Controller/Seguranca.php';
 require_once '../Controller/ControllerPerfil.php';
+require_once '../Controller/ControllerAvaliacao.php';
 ?>
 <!doctype html>
 <html lang="br">
@@ -22,10 +23,17 @@ require_once '../Controller/ControllerPerfil.php';
 <br>
 <br>
 <br>
-<form name="form1" action="../Controller/ControllerAvaliacao.php?acao=cadastro" method="post">
+<?php
+if(isset($_GET['id'])){
+    $id_avaliacao=$_GET['id'];
+    $resultado=buscaAvaliacao($id_avaliacao);
+    $_SESSION['acesso']=="usuario" ? $valor="1" : $valor="2";
+}
+?>
+<form name="form1" action="../Controller/ControllerAvaliacao.php?tela=<?=$valor?>&acao=atualizar&id=<?=$resultado[0]?>" method="post">
     <div align="center">
         <br><br>
-        <h2> Nova Avaliação </h2>
+        <h2> Atualizar Avaliação </h2>
     </div>
     <br>
     <br>
@@ -33,23 +41,23 @@ require_once '../Controller/ControllerPerfil.php';
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="inputEmail4">Historico clinico </label>
-                <textarea name="historicoClinico" required   class="form-control"  ></textarea>
+                <textarea name="historicoClinico"   required   class="form-control"  ><?=$resultado[1]?></textarea>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputEmail4">Peso: </label>
-                <input name="peso" type="text"  required class="form-control" id="peso" >
+                <input name="peso" type="text" value="<?=$resultado[2]?>" required class="form-control" id="peso" >
             </div>
             <div class="form-group col-md-4">
                 <label for="inputPassword4">Altura: </label>
-                <input name="altura"  required type="text" class="form-control"  id="altura">
+                <input name="altura"  required type="text"   value="<?=$resultado[3]?>" class="form-control"  id="altura">
             </div>
 
             <div class="form-group col-md-4">
                 <label for="inputEmail4">Imc : </label>
                 <fieldset disabled>
-                <input name="imc"   value=" Gerado pelo sistema" class="form-control">
+                    <input name="imc"   value=" Gerado pelo sistema" class="form-control">
                 </fieldset>
             </div>
 
@@ -61,19 +69,19 @@ require_once '../Controller/ControllerPerfil.php';
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="inputPassword4">Torax : </label>
-                <input name="torax"  required type="text" class="form-control"  id="torax">
+                <input name="torax"  required type="text"  value="<?=$resultado[5]?>" class="form-control"  id="torax">
             </div>
             <div class="form-group col-md-3">
                 <label for="inputPassword4">Cintura: </label>
-                <input name="cintura"  required type="text" class="form-control" id="cintura" >
+                <input name="cintura"  required type="text" value="<?=$resultado[6]?>"class="form-control" id="cintura" >
             </div>
             <div class="form-group col-md-3">
                 <label for="inputPassword4">Abdomen: </label>
-                <input name="abdomen"  required type="text" class="form-control" id="abdomen" >
+                <input name="abdomen"  required type="text" value="<?=$resultado[7]?>"class="form-control" id="abdomen" >
             </div>
             <div class="form-group col-md-3">
                 <label for="inputPassword4">Quadril: </label>
-                <input name="quadril"  required type="text" class="form-control"  id="quadril">
+                <input name="quadril"  required type="text" value="<?=$resultado[8]?>"class="form-control"  id="quadril">
             </div>
         </div>
         <div class="row">
@@ -81,11 +89,11 @@ require_once '../Controller/ControllerPerfil.php';
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Antebraço Esquerdo: </label>
-                        <input name="antebracoEsquerdo"  required type="text" class="form-control" id="antebracoesquerdo">
+                        <input name="antebracoEsquerdo"  required type="text" value="<?=$resultado[9]?>"class="form-control" id="antebracoesquerdo">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Antebraço Direito: </label>
-                        <input name="antebracoDireito"  required type="text" class="form-control" id="antebracodireito">
+                        <input name="antebracoDireito"  required type="text"value="<?=$resultado[10]?>" class="form-control" id="antebracodireito">
                     </div>
 
                 </div>
@@ -94,11 +102,11 @@ require_once '../Controller/ControllerPerfil.php';
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Braço Esquerdo: </label>
-                        <input name="bracoEsquerdo"  required type="text" class="form-control" id="bracoesquerdo">
+                        <input name="bracoEsquerdo"  required type="text" value="<?=$resultado[11]?>"class="form-control" id="bracoesquerdo">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Braço Direito: </label>
-                        <input name="bracoDireito"  required type="text" class="form-control" id="bracodireito">
+                        <input name="bracoDireito"  required type="text"  value="<?=$resultado[12]?>"class="form-control" id="bracodireito">
                     </div>
                 </div>
             </div>
@@ -108,11 +116,11 @@ require_once '../Controller/ControllerPerfil.php';
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Coxa Esquerdo: </label>
-                        <input name="coxaEsquerda"  required type="text" class="form-control" id="coxaesquerdo" >
+                        <input name="coxaEsquerda"  required type="text"  value="<?=$resultado[13]?>"class="form-control" id="coxaesquerdo" >
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Coxa Direito: </label>
-                        <input name="coxaDireita"  required type="text" class="form-control" id="coxadireita">
+                        <input name="coxaDireita"  required type="text"value="<?=$resultado[14]?>" class="form-control"  id="coxadireita">
                     </div>
                 </div>
 
@@ -121,20 +129,21 @@ require_once '../Controller/ControllerPerfil.php';
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Panturrilha Esquerdo: </label>
-                        <input name="panturrilhaEsquerda"  required type="text" class="form-control" id="panturrilhaesquerda" >
+                        <input name="panturrilhaEsquerda"  required type="text"  value="<?=$resultado[15]?>"class="form-control" id="panturrilhaesquerda" >
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Panturrilha Direito: </label>
-                        <input name="pantirrilhaDireita"  required type="text" class="form-control" id="panturrilhadireita">
+                        <input name="pantirrilhaDireita"  required type="text" value="<?=$resultado[16]?>"class="form-control" id="panturrilhadireita">
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-8">
+
             </div>
             <div class="form-group col-md-4">
-                <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block"  >Cadastrar</button>
+                <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block"  >Atualizar</button>
             </div>
         </div>
     </div>
@@ -165,6 +174,7 @@ require_once '../Controller/ControllerPerfil.php';
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 

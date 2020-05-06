@@ -13,7 +13,7 @@ require_once '../Modal/CrudAvaliacao.php';
        if($resultado==true){
            $_SESSION['mensagem_avaliacao']="Deletado Avaliacao Com Sucesso";
             //valida de se esta deletando o usuario ou professor referente a avaliação
-           if(isset($_GET['m']) && $_GET['m']==1 ){
+           if(isset($_GET['tela']) && $_GET['tela']==1 ){
                header("Location:../view/AvaliacaoUsuario.php");
            }else{
                header("Location:../view/FichaAluno.php");
@@ -68,7 +68,7 @@ require_once '../Modal/CrudAvaliacao.php';
 
            // valida se acao esta sendo executada pelo usuario ou professor
 
-           if(isset($_GET['m']) && $_GET['m']==1 ){
+           if(isset($_GET['tela']) && $_GET['tela']=="1" ){
                header("Location:../view/AvaliacaoUsuario.php");
            }else{
                header("Location:../view/FichaAluno.php");
@@ -106,12 +106,12 @@ if(isset($_GET['acao']) && $_GET['acao'] =='cadastro'  ){
      $_SESSION['mensagem_avaliacao']="Cadastrado Avaliacao Com Sucesso";
 
      //verifica se esta sendo manipulado a tela por usuario ou professor
-     if(isset($_GET['m']) && $_GET['m']==1 ){
+     if(isset($_GET['tela']) && $_GET['tela']=="1" ){
          header("Location:../view/AvaliacaoUsuario.php");
      }else{
          header("Location:../view/FichaAluno.php");
      }
- }
+}
 }
 
 //funcção de calcular o imc

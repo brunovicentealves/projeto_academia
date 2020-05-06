@@ -98,47 +98,20 @@ function buscarUsuario($id_professor){
     }
 }
 
-function excluir($id){
-    try {
-        $pdo=conexao();
+function buscarUsuarioId($id){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT nome_usuario,sobrenome_usuario  FROM usuario  WHERE id_usuario=:id_usuario");
+    $stmt->bindValue(":id_usuario",$id);
+    $stmt->execute();
 
-        $deletar = $pdo->prepare("DELETE FROM usuario WHERE id_user= :id");
-
-        $deletar->bindValue(":id", $id);
-
-        $deletar->execute();
-
-        return"Deletado Com sucesso";
-
-    }catch (PDOException $e){
-
-        return $e->getMessage();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach( $users as $user){
+        $nome_usuario=$user['nome_usuario'];
+        $sobrenome_usuario=$user['sobrenome_usuario'];
+    }
+    if($users!= NULL){
+        return array($nome_usuario,$sobrenome_usuario);
     }
 
 
-}
-
-function atualizar($pdo,$usuario,$senha,$id){
-
-    try {
-
-        $pdo=conexao();
-
-        $atualizar = $pdo->prepare("UPDATE usuario SET user_name =:usuario , user_password=:senha WHERE id_user =:id");
-
-
-    $atualizar->bindValue(":usuario", $usuario);
-
-    $atualizar->bindValue(":senha", $senha);
-
-    $atualizar->bindValue(":id", $id);
-
-    $atualizar->execute();
-
-    return "Atualizado com Sucesso";
-
-    }catch (PDOException $e){
-
-        return $e->getMessage();
-    }
 }

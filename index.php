@@ -60,11 +60,11 @@
       <form class="form-inline mt-2 mt-md-0">
           <ul class="navbar-nav mr-auto">
               <li class="nav">
-          <a href="../Projeto_Academia/Classes/view/LoginProfessor.php" class="nav-link"><span class="btn btn-outline-dark">Acesso Professor</span></a>
+          <a href="App/view/LoginProfessor.php" class="nav-link"><span class="btn btn-outline-dark">Acesso Professor</span></a>
               </li>
               <li class="nav">
 
-       <a href="Classes/view/LoginUsuario.php" class="nav-link"><span class="btn btn-outline-dark">Acesso Aluno</span></a>
+       <a href="App/view/LoginUsuario.php" class="nav-link"><span class="btn btn-outline-dark">Acesso Aluno</span></a>
               </li>
           </ul>
       </form>

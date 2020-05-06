@@ -31,7 +31,7 @@
 namespace PHPMailer\PHPMailer;
 
 /**
- * Aliases for League Provider Classes
+ * Aliases for League Provider App
  * Make sure you have added these to your composer.json and run `composer install`
  * Plenty to choose from here:
  * @see http://oauth2-client.thephpleague.com/providers/thirdparty/
