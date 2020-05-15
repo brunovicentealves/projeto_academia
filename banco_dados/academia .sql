@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Maio-2020 às 03:03
+-- Generation Time: 15-Maio-2020 às 19:10
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.4
 
@@ -21,6 +21,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `academia`
 --
+
+-- --------------------------------------------------------
+-- ------------
+--  NOME BANCO
+-- ------------
+CREATE DATABASE academia;
+--
+-- Estrutura da tabela `alimento`
+--
+
+CREATE TABLE `alimento` (
+  `id_alimento` int(11) NOT NULL,
+  `alimento` varchar(45) DEFAULT NULL,
+  `quantidade` varchar(45) DEFAULT NULL,
+  `id_refeicao` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -64,32 +80,6 @@ INSERT INTO `avaliacao` (`id_avaliacao`, `his_clinico`, `peso`, `altura`, `imc`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cardapio`
---
-
-CREATE TABLE `cardapio` (
-  `id_cardapio` int(11) NOT NULL,
-  `descricao_cardapio` varchar(100) DEFAULT NULL,
-  `id_ficha` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `dieta`
---
-
-CREATE TABLE `dieta` (
-  `id_dieta` int(11) NOT NULL,
-  `nome_dieta` varchar(100) DEFAULT NULL,
-  `alimento` varchar(45) DEFAULT NULL,
-  `quantidade` varchar(45) DEFAULT NULL,
-  `id_cardapio` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `exercicio`
 --
 
@@ -97,9 +87,6 @@ CREATE TABLE `exercicio` (
   `id_exercicio` int(11) NOT NULL,
   `nome_exercicio` varchar(100) DEFAULT NULL,
   `serie` varchar(45) DEFAULT NULL,
-  `repeticoes` varchar(100) DEFAULT NULL,
-  `carga` varchar(100) DEFAULT NULL,
-  `descanso` varchar(100) DEFAULT NULL,
   `descricao_exercicio` varchar(100) DEFAULT NULL,
   `id_treino` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -177,12 +164,16 @@ INSERT INTO `professor_usuario` (`id_professor_usuario`, `id_professor`, `id_usu
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_treino`
+-- Estrutura da tabela `refeicao`
 --
 
-CREATE TABLE `tipo_treino` (
-  `id_tipo_treino` int(11) NOT NULL,
-  `nome_tipo_treino` varchar(100) DEFAULT NULL
+CREATE TABLE `refeicao` (
+  `id_refeicao` int(11) NOT NULL,
+  `nome_refeicao` varchar(200) DEFAULT NULL,
+  `descricao_refeicao` varchar(300) DEFAULT NULL,
+  `hora_refeicao` varchar(100) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `id_ficha` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -195,7 +186,7 @@ CREATE TABLE `treino` (
   `id_treino` int(11) NOT NULL,
   `nome_treino` varchar(100) DEFAULT NULL,
   `descricao_treino` varchar(100) DEFAULT NULL,
-  `id_tipo_treino` int(11) DEFAULT NULL,
+  `data` date DEFAULT NULL,
   `id_ficha` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -234,25 +225,18 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `sobrenome_usuario`, `email
 --
 
 --
+-- Indexes for table `alimento`
+--
+ALTER TABLE `alimento`
+  ADD PRIMARY KEY (`id_alimento`),
+  ADD KEY `id_refeicao` (`id_refeicao`);
+
+--
 -- Indexes for table `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD PRIMARY KEY (`id_avaliacao`),
   ADD KEY `id_ficha` (`id_ficha`);
-
---
--- Indexes for table `cardapio`
---
-ALTER TABLE `cardapio`
-  ADD PRIMARY KEY (`id_cardapio`),
-  ADD KEY `id_ficha` (`id_ficha`);
-
---
--- Indexes for table `dieta`
---
-ALTER TABLE `dieta`
-  ADD PRIMARY KEY (`id_dieta`),
-  ADD KEY `id_cardapio` (`id_cardapio`);
 
 --
 -- Indexes for table `exercicio`
@@ -283,18 +267,18 @@ ALTER TABLE `professor_usuario`
   ADD KEY `id_professor` (`id_professor`);
 
 --
--- Indexes for table `tipo_treino`
+-- Indexes for table `refeicao`
 --
-ALTER TABLE `tipo_treino`
-  ADD PRIMARY KEY (`id_tipo_treino`);
+ALTER TABLE `refeicao`
+  ADD PRIMARY KEY (`id_refeicao`),
+  ADD KEY `id_ficha` (`id_ficha`);
 
 --
 -- Indexes for table `treino`
 --
 ALTER TABLE `treino`
   ADD PRIMARY KEY (`id_treino`),
-  ADD KEY `id_ficha` (`id_ficha`),
-  ADD KEY `id_tipo_treino` (`id_tipo_treino`);
+  ADD KEY `id_ficha` (`id_ficha`);
 
 --
 -- Indexes for table `usuario`
@@ -307,22 +291,16 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT for table `alimento`
+--
+ALTER TABLE `alimento`
+  MODIFY `id_alimento` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `avaliacao`
 --
 ALTER TABLE `avaliacao`
   MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
-
---
--- AUTO_INCREMENT for table `cardapio`
---
-ALTER TABLE `cardapio`
-  MODIFY `id_cardapio` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `dieta`
---
-ALTER TABLE `dieta`
-  MODIFY `id_dieta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `exercicio`
@@ -349,10 +327,10 @@ ALTER TABLE `professor_usuario`
   MODIFY `id_professor_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tipo_treino`
+-- AUTO_INCREMENT for table `refeicao`
 --
-ALTER TABLE `tipo_treino`
-  MODIFY `id_tipo_treino` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `refeicao`
+  MODIFY `id_refeicao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `treino`
@@ -371,22 +349,16 @@ ALTER TABLE `usuario`
 --
 
 --
+-- Limitadores para a tabela `alimento`
+--
+ALTER TABLE `alimento`
+  ADD CONSTRAINT `alimento_ibfk_1` FOREIGN KEY (`id_refeicao`) REFERENCES `refeicao` (`id_refeicao`);
+
+--
 -- Limitadores para a tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
   ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`id_ficha`) REFERENCES `ficha` (`id_ficha`);
-
---
--- Limitadores para a tabela `cardapio`
---
-ALTER TABLE `cardapio`
-  ADD CONSTRAINT `cardapio_ibfk_1` FOREIGN KEY (`id_ficha`) REFERENCES `ficha` (`id_ficha`);
-
---
--- Limitadores para a tabela `dieta`
---
-ALTER TABLE `dieta`
-  ADD CONSTRAINT `dieta_ibfk_1` FOREIGN KEY (`id_cardapio`) REFERENCES `cardapio` (`id_cardapio`);
 
 --
 -- Limitadores para a tabela `exercicio`
@@ -408,11 +380,16 @@ ALTER TABLE `professor_usuario`
   ADD CONSTRAINT `professor_usuario_ibfk_2` FOREIGN KEY (`id_professor`) REFERENCES `professor` (`id_professor`);
 
 --
+-- Limitadores para a tabela `refeicao`
+--
+ALTER TABLE `refeicao`
+  ADD CONSTRAINT `refeicao_ibfk_1` FOREIGN KEY (`id_ficha`) REFERENCES `ficha` (`id_ficha`);
+
+--
 -- Limitadores para a tabela `treino`
 --
 ALTER TABLE `treino`
-  ADD CONSTRAINT `treino_ibfk_1` FOREIGN KEY (`id_ficha`) REFERENCES `ficha` (`id_ficha`),
-  ADD CONSTRAINT `treino_ibfk_2` FOREIGN KEY (`id_tipo_treino`) REFERENCES `tipo_treino` (`id_tipo_treino`);
+  ADD CONSTRAINT `treino_ibfk_1` FOREIGN KEY (`id_ficha`) REFERENCES `ficha` (`id_ficha`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

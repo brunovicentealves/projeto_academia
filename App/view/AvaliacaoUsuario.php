@@ -74,7 +74,7 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
                     <tr>
                         <td><?=$_SESSION['usuario'],"",$_SESSION['sobrenome_usuario']?></td>
                         <td><?=$linhas['data_avaliacao']?></td>
-                       <td><a href="../Controller/ControllerAvaliacao.php?tela=1&id=<?=$linhas['id_avaliacao']?>&acao=excluir"><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;
+                        <td><a href="../Controller/ControllerAvaliacao.php?tela=1&id=<?=$linhas['id_avaliacao']?>&acao=excluir"><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;</td>
                         <td> <a href="../Controller/ControllerAvaliacao.php?tela=1&id=<?=$linhas['id_avaliacao']?>&acao=visualizar"><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a>&nbsp;</td>
                         <td>  <a href="../Controller/ControllerAvaliacao.php?tela=1&id=<?=$linhas['id_avaliacao']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
                        </td>

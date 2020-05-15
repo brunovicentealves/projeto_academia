@@ -51,6 +51,15 @@ require_once '../Controller/ControllerPerfil.php';
                 <?php
             }
             ?>
+            <?php
+            if($_SESSION['acesso']=="usuario"){
+                ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="CadastroTreino.php">treino</a>
+                </li>
+                <?php
+            }
+            ?>
 
 
         </ul>
