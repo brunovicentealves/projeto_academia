@@ -10,7 +10,7 @@ require_once '../Controller/ControllerPerfil.php';
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercicios</title>
+    <title>Visualizar Treino</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -24,32 +24,52 @@ require_once '../Controller/ControllerPerfil.php';
 <br>
 <br>
 <div align="center">
-    <h2> Treino </h2>
+    <h2> Visualização Treino </h2>
 </div>
 <div class="container">
-    <form name="form1" action="../Controller/ControllerTreino.php?acao=cadastrar" method="post">
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label for="inputEmail4">Nome Treino: </label>
-            <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino" >
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Nome Treino: </label>
+                <fieldset disabled>
+                <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino" >
+                </fieldset>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label for="inputEmail4">Descrição do Treino </label>
-            <textarea name="descricaoTreino"   class="form-control"  ></textarea>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Descrição do Treino </label>
+                <fieldset disabled>
+                <textarea name="descricaoTreino"   class="form-control"  ></textarea>
+                </fieldset>
+            </div>
         </div>
-    </div>
         <br>
         <div class="row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-12">
+                <div class="table">
+                    <table class="table-striped table-responsive-xl" id="minhaTabela">
 
-            </div>
-            <div class="form-group col-md-4">
-                <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block">Seguinte</button>
+                        <thead>
+                        <tr>
+                            <th  class="table-dark" style='width: 10%;background-color: #FF7F50;'>Nome Exercicio</th>
+                            <th class="table-dark" style='width: 15%;background-color: #FF7F50;'>Serie </th>
+                            <th class="table-dark" style='width: 10%;background-color: #FF7F50;'>Descrição</th>
+                        </tr>
+                        </thead>
+
+
+                                <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+                                </tr>
+                                </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </form>
 </div>
 <br>
 <br>
@@ -60,6 +80,7 @@ require_once '../Controller/ControllerPerfil.php';
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 

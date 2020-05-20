@@ -2,6 +2,7 @@
 require_once '../Controller/Session.php';
 require_once '../Controller/Seguranca.php';
 require_once '../Controller/ControllerPerfil.php';
+require_once '../Controller/ControllerTreino.php';
 ?>
 <!doctype html>
 <html lang="br">
@@ -27,26 +28,29 @@ require_once '../Controller/ControllerPerfil.php';
     <h2> Treino </h2>
 </div>
 <div class="container">
-    <form name="form1" action="../Controller/ControllerTreino.php?acao=cadastrar" method="post">
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label for="inputEmail4">Nome Treino: </label>
-            <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino" >
+    <?php
+     $id_treino=$_GET['id'];
+    $resultado=buscarIdTreinoAtualizar($id_treino)?>
+    <form name="form1" action="../Controller/ControllerTreino.php?id=<?=$id_treino?>&acao=atualizar" method="post">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Nome Treino: </label>
+                <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino"  value="<?=$resultado[0]?>">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label for="inputEmail4">Descrição do Treino </label>
-            <textarea name="descricaoTreino"   class="form-control"  ></textarea>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Descrição do Treino </label>
+                <textarea name="descricaoTreino"   class="form-control"  ><?=$resultado[1]?></textarea>
+            </div>
         </div>
-    </div>
         <br>
         <div class="row">
             <div class="form-group col-md-8">
 
             </div>
             <div class="form-group col-md-4">
-                <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block">Seguinte</button>
+                <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block">Atualizar</button>
             </div>
         </div>
     </form>
@@ -60,6 +64,7 @@ require_once '../Controller/ControllerPerfil.php';
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 

@@ -1,6 +1,6 @@
 <?php
 require_once '../Controller/Session.php';
-require_once '../Controller/Seguranca.php';
+
 require_once '../Controller/ControllerPerfil.php';
 ?>
 <!doctype html>
@@ -24,22 +24,22 @@ require_once '../Controller/ControllerPerfil.php';
 <br>
 <br>
 <div align="center">
-    <h2> Treino </h2>
+    <h2> Cadastro Dieta </h2>
 </div>
 <div class="container">
-    <form name="form1" action="../Controller/ControllerTreino.php?acao=cadastrar" method="post">
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label for="inputEmail4">Nome Treino: </label>
-            <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino" >
+    <form name="form1" action="../Controller/ControllerRefeicao.php?acao=cadastrar" method="post">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4"> Nome Dieta</label>
+                <input name="nomeRefeicao" type="text"  required class="form-control" id="nomeTreino" >
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label for="inputEmail4">Descrição do Treino </label>
-            <textarea name="descricaoTreino"   class="form-control"  ></textarea>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputEmail4">Descrição da Dieta </label>
+                <textarea name="descricaoRefeicao"   class="form-control"  ></textarea>
+            </div>
         </div>
-    </div>
         <br>
         <div class="row">
             <div class="form-group col-md-8">
@@ -60,6 +60,7 @@ require_once '../Controller/ControllerPerfil.php';
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 

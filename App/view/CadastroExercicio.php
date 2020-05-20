@@ -2,6 +2,7 @@
 require_once '../Controller/Session.php';
 require_once '../Controller/Seguranca.php';
 require_once '../Controller/ControllerPerfil.php';
+require_once '../Controller/ControllerExercicio.php';
 ?>
 <!doctype html>
 <html lang="br">
@@ -30,18 +31,21 @@ require_once '../Controller/ControllerPerfil.php';
 <br>
 <br>
 <div class="container">
-    <form name="form1" action="" method="post">
+    <?php $id=$_GET['id'];
+    $_SESSION['id_treino']=$id;
+    ?>
+    <form name="form1" action="../Controller/ControllerExercicio.php?id=<?=$id?>&acao=cadastro" method="post">
     <div class="row">
         <div class="form-group col-md-6">
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="inputEmail4">Nome Exercicio: </label>
-                    <input name="nomeExercicio" type="text"  required class="form-control" id="nomeExercicio" >
+                    <input name="nomeExercicio" type="text"  required class="form-control"  >
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="inputEmail4">Serie: </label>
-                    <input name="serie" type="text"  required class="form-control" id="serie" >
+                    <input name="serie" type="text"  required class="form-control" >
                 </div>
             </div>
             <div class="form-row">
@@ -67,21 +71,31 @@ require_once '../Controller/ControllerPerfil.php';
             <div align="center">
                 <h5> Exercicios Cadastrados </h5>
             </div>
+
             <table class="table table-responsive-xl">
+
                 <thead>
                 <tr>
-                    <th scope="col">Nome  </th>
-                    <th scope="col">Ações</th>
+                    <th scope="col" style='width: 30%;background-color: #FF7F50;'>Nome  </th>
+                    <th scope="col" style='width: 5%;background-color: #FF7F50;'>Deletar  </th>
+                    <th scope="col" style='width: 5%;background-color: #FF7F50;'>Editar  </th>
+
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
+                 <?php
+                 $resultado=buscarExercicio($id);
+                 if(isset($resultado)){
+                   foreach ($resultado as $linhas){
+                        ?>
+                        <tbody>
+                        <tr>
+                            <td><?=$linhas['nome_exercicio']?></td>
+                            <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_exercicio']?>&acao=excluir"><img title="editar Avaliacao"src="../../images/delete.png"></a></td>
+                            <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_exercicio']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
+                        </tr>
+                        </tbody>
 
-                    <td> posterior</td>
-                    <td><a href=""><img  title="Excluir Avaliacao" src="../../images/delete.png"></a></td>
-
-                </tr>
-                </tbody>
+                    <?php }}?>
             </table>
 
         </div>
