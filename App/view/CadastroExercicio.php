@@ -24,6 +24,8 @@ require_once '../Controller/ControllerExercicio.php';
 <br>
 <br>
 <br>
+<br>
+
 <div align="center">
     <h2> Exercicios </h2>
 </div>
@@ -38,14 +40,18 @@ require_once '../Controller/ControllerExercicio.php';
     <div class="row">
         <div class="form-group col-md-6">
             <div class="form-row">
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-6">
                     <label for="inputEmail4">Nome Exercicio: </label>
                     <input name="nomeExercicio" type="text"  required class="form-control"  >
                 </div>
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label for="inputEmail4">Serie: </label>
-                    <input name="serie" type="text"  required class="form-control" >
+                    <input name="serie" type="text"  required class="form-control"  id="serie">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputEmail4">Repetições: </label>
+                    <input name="repeticao" type="text"  required class="form-control" id="repeticoes" >
                 </div>
             </div>
             <div class="form-row">
@@ -77,6 +83,8 @@ require_once '../Controller/ControllerExercicio.php';
                 <thead>
                 <tr>
                     <th scope="col" style='width: 30%;background-color: #FF7F50;'>Nome  </th>
+                    <th scope="col" style='width: 30%;background-color: #FF7F50;'>Serie </th>
+                    <th scope="col" style='width: 30%;background-color: #FF7F50;'>Repetições  </th>
                     <th scope="col" style='width: 5%;background-color: #FF7F50;'>Deletar  </th>
                     <th scope="col" style='width: 5%;background-color: #FF7F50;'>Editar  </th>
 
@@ -90,6 +98,8 @@ require_once '../Controller/ControllerExercicio.php';
                         <tbody>
                         <tr>
                             <td><?=$linhas['nome_exercicio']?></td>
+                            <td><?=$linhas['serie']?></td>
+                            <td><?=$linhas['repeticao']?></td>
                             <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_exercicio']?>&acao=excluir"><img title="editar Avaliacao"src="../../images/delete.png"></a></td>
                             <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_exercicio']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
                         </tr>
@@ -103,6 +113,11 @@ require_once '../Controller/ControllerExercicio.php';
 </div>
 
 <?php include('../view/footer.php') ?>
+
+<script type="text/javascript">
+    $("#serie").mask("000");
+    $("#repeticoes").mask("000");
+</script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

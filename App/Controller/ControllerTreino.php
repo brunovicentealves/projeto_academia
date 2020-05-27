@@ -29,13 +29,11 @@ $id_ficha=$_SESSION['id_ficha'];
 
 $resultado= atualizarTreino($id_treino,$nome_treino,$descricao_treino,$data_criacao);
     $_SESSION['mensagem_avaliacao']="Atualizado o dado com sucesso";
+    if($resultado==true){
+        $_SESSION['mensagem_avaliacao']="Atualizado o dado com sucesso";
+    }
     header("Location:../view/FichaAluno.php");
     // visualiza os dados
-}elseif (isset($_GET['acao'] )&& $_GET['acao'] == "visualizar"){
-
-    echo "visualizar";
-
-    // deleta os dados
 }elseif(isset($_GET['acao'] )&& $_GET['acao'] == "excluir"){
 
     echo "deletar";
@@ -50,6 +48,12 @@ $id_ficha=$_SESSION['id_ficha'];
 }
 // busca dados pelo id do treino
 function buscarIdTreinoAtualizar($id_treino){
+    $resultado=buscarTreinoId($id_treino);
+    return $resultado;
+}
+
+function buscarTodosTreino($id_treino){
+
     $resultado=buscarTreinoId($id_treino);
     return $resultado;
 }

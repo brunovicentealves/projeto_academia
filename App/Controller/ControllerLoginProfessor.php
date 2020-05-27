@@ -20,7 +20,7 @@ if(isset($usuario) && isset($senha)){
         //controla o acesso o tipo de acesso no menu do sistema
         $_SESSION['acesso']="professor";
         $_SESSION['id_usuario']=$resultado[4];
-        header("Location:../view/Painel.php");
+        header("Location:../view/PainelAdm.php");
     }else{
         $_SESSION['mensagem']=$resultado;
         header("Location:../view/LoginProfessor.php");

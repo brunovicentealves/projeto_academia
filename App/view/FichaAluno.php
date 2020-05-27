@@ -44,16 +44,27 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
 <br>
 <?php  $usuario=dadosusuario()?>
 <div class="text-center">
-    <h2 >Ficha do(a) <?=$usuario[0]?></h2>
-
-
+<div class="badge badge-secondary text-wrap" style="width: 98%;">
+    <h4>Ficha <?=$usuario[0]?></h4>
+</div>
 </div>
 <br>
 <br>
+<br>
 <div class="container-fluid ">
-    <div class="text-center">
-        <h4>Avaliações</h4>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 text-center d-none d-md-block">
+            <a href="#" class="thumbnail">
+                <img class="img-fluid img-thumbnail"src="../../images/avaliacao.png" width="100%"  alt="">
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-12 text-center d-block d-sm-none">
+            <a href="#" class="thumbnail">
+                <img class="img-fluid img-thumbnail"src="../../images/avaliacao-mini.png" width="100%" alt="">
+            </a>
+        </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-6">
             <a href="CadastraAvaliacao.php"  style="background-color: #FF7F50;" class="btn btn-dark">Cadastrar Avaliacao</a>
@@ -70,9 +81,9 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
             <tr>
                 <th  class="table-dark" style='width: 20%;background-color: #FF7F50;'>Avaliacao</th>
                 <th class="table-dark" style='width: 40%;background-color: #FF7F50;'>Data</th>
-                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Excluir</th>
-                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>visualizar</th>
-                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Editar</th>
+                <th class="table-dark text-center" style='width: 5%;background-color: #FF7F50;'>Excluir</th>
+                <th class="table-dark text-center" style='width: 5%;background-color: #FF7F50;'>visualizar</th>
+                <th class="table-dark text-center" style='width: 5%;background-color: #FF7F50;'>Editar</th>
             </tr>
             </thead>
             <!-- tras consulta de avaliacao vinculado a ficha do aluno -->
@@ -97,9 +108,19 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
 </div>
 <!--  Treinos -->
 <div class="container-fluid">
-    <div class="text-center">
-        <h4>Treinos</h4>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 text-center d-none d-md-block">
+            <a href="#" class="thumbnail">
+                <img class="img-fluid img-thumbnail"src="../../images/treino.png" width="100%" alt="">
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-12 text-center d-block d-sm-none">
+            <a href="#" class="thumbnail">
+                <img class="img-fluid img-thumbnail"src="../../images/treino-mini.png" width="100%" alt="">
+            </a>
+        </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-6">
             <a href="CadastroTreino.php"  style="background-color: #FF7F50;" class="btn btn-dark">Cadastrar Treinos</a>
@@ -118,7 +139,7 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
                 <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Excluir</th>
                 <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>visualizar</th>
                 <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Editar</th>
-                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Cadastrar Exercicios</th>
+                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Exercicios</th>
             </tr>
             </thead>
             <!-- tras consulta da treinos vinculdas ao usuario-->
@@ -143,10 +164,20 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
     </div>
 </div>
 <!-- Dietas -->
-<div class="container-fluid">
-    <div class="text-center">
-        <h4>Dietas</h4>
+<div class="container-fluid ">
+    <div class="row ">
+        <div class="col-xs-12 col-md-12 text-center d-none d-md-block">
+            <a href="#" class="thumbnail">
+                <img class="img-fluid img-thumbnail"src="../../images/dieta.png" width="100%" alt="">
+            </a>
+        </div>
+        <div class="col-xs-12 col-md-12 text-center d-block d-sm-none">
+            <a href="#" class="thumbnail">
+                <img class="img-fluid img-thumbnail"src="../../images/dieta-mini.png" width="100%" alt="">
+            </a>
+        </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-6">
             <a href="CadastroRefeicao.php" style="background-color: #FF7F50;" class="btn btn-dark">Cadastrar Dietas</a>
@@ -161,26 +192,27 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
 
             <thead>
             <tr>
-                <th  class="table-dark" style='width: 40%;background-color: #FF7F50;'>Dieta</th>
+                <th  class="table-dark" style='width: 20%;background-color: #FF7F50;'>Dieta</th>
+                <th  class="table-dark" style='width: 40%;background-color: #FF7F50;'>Data</th>
                 <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Excluir</th>
                 <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>visualizar</th>
                 <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Editar</th>
-                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Cadastrar Exercicios</th>
+                <th class="table-dark" style='width: 1%;background-color: #FF7F50;'>Alimento</th>
             </tr>
             </thead>
             <!-- tras consulta das dietas dos alunos -->
             <?php $resultado=buscarTodasRefeicao();
-            if(isset($resultado)){
+            if(isset($resultado) && $resultado!= null){
                 foreach ($resultado as $linhas){
                     ?>
                     <tbody>
                     <tr>
 
                         <td><?=$linhas['nome_refeicao']?></td>
-
+                        <td><?=$linhas['data_criacao']?></td>
                         <td class="text-center"><a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_refeicao']?>&acao=excluir"><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;</td>
-                        <td class="text-center"> <a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_refeicao']?>&acao=visualizar"><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a>&nbsp;</td>
-                        <td class="text-center">  <a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_refeicao']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
+                        <td class="text-center"> <a href="../view/VisualizaDieta.php?id=<?=$linhas['id_refeicao']?>"><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a>&nbsp;</td>
+                        <td class="text-center">  <a href="../Controller/ControllerRefeicao.php?id=<?=$linhas['id_refeicao']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
                         <td class="text-center">  <a href="../view/CadastroAlimento.php?id=<?=$linhas['id_refeicao']?>"><img title="editar Avaliacao"src="../../images/adcionar.png"></a></td>
 
                         <!--<td><a href="../Controller/ControllerProfessorUsuario.php?id=<?//=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>-->

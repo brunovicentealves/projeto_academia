@@ -1,6 +1,7 @@
 <?php
 require_once 'Session.php';
 require_once '../Modal/CrudUsuario.php';
+
 if(isset($_POST['nome'])&& isset($_POST['email'])){
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -8,7 +9,7 @@ if(isset($_POST['nome'])&& isset($_POST['email'])){
 }
 
 // cadastra os usuarios no sitema
-if(isset($_POST['nome']) && isset($_POST['email'])){
+if(isset($_GET['acao']) && $_GET['acao'] == "cadastrar"){
     $nome =$_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
@@ -23,13 +24,13 @@ if(isset($_POST['nome']) && isset($_POST['email'])){
     $telefone = $_POST['telefone'];
 
 
-    //echo $nome.$email;
-    BuscaEmail($nome,$email,$teste);
-    $teste1 = BuscaEmail($nome,$email,$teste);
+
+    BuscaEmailAluno($nome,$email,$teste);
+    $teste1 = BuscaEmailAluno($nome,$email,$teste);
     if ($teste1 == 2){
         echo "E-mail ja cadastrado para outro usuario";
     }else if ("USUÁRIO NÃO CONSTA CADASTRADO NA NOSSA BASE DE DADOS!"){
-        $_SESSION['mensagem']=salve($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone);
+        $_SESSION['mensagem']=salveUsuario($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone);
         header("Location:../view/LoginUsuario.php");
     }
 
@@ -41,6 +42,17 @@ function meuAluno(){
     $resultado =  buscarUsuario($id_professor);
  return $resultado;
 }
+// mostra quantidade de alunos cadastrados no sistema
+function quantidadeUsuariosCadastrados(){
+
+   $resultado= quantidadeUsuariosTotal();
+
+    return $resultado;
+}
+
+
+
+
 
 
 

@@ -64,3 +64,35 @@ function buscarIdTodasRefeicoes($id_ficha){
         return false;
     }
 }
+
+function buscarTodoRefeicaoId($id_refeicao){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT * FROM refeicao WHERE id_refeicao=:valor1");
+    $stmt->bindValue(":valor1",$id_refeicao);
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach( $users as $user){
+        $nome_refeicao=$user['nome_refeicao'];
+        $descricao_refeicao=$user['descricao_refeicao'];
+    }
+    if($users!= NULL){
+        return array($nome_refeicao,$descricao_refeicao);
+    }
+}
+
+
+function  atualizarRefeicao($id_refeicao,$nome_refeicao,$descricao_refeicao,$data_criacao){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("UPDATE refeicao SET nome_refeicao=:valor1,descricao_refeicao=:valor2,data_criacao=:valor3  WHERE id_refeicao=:valor4");
+
+    $stmt->bindParam(':valor1', $nome_refeicao);
+    $stmt->bindParam(':valor2', $descricao_refeicao);
+    $stmt->bindParam(':valor3', $data_criacao);
+    $stmt->bindParam(':valor4', $id_refeicao);
+    $stmt->execute();
+    if($stmt != NULL){
+        return true;
+    }else{
+        return false;
+    }
+}

@@ -15,7 +15,7 @@
 <body>
 
 
-<form name="form1" action="../Controller/ControllerCrudUsuario.php" method="post">
+<form name="form1" action="../Controller/ControllerCrudUsuario.php?acao=cadastrar" method="post">
     <div align="center">
     <br><br>
     <h2> <b> <u>CADASTRO DE ALUNOS</u> </b> </h2>

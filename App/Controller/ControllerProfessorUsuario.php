@@ -17,3 +17,9 @@ function usuariosNaoVinculado(){
     $resultado=buscarAlunoNaoAssociado();
      return $resultado;
 };
+
+function totalUsuarioVinculadoProfessor(){
+    $id_professor=$_SESSION['id_usuario'];
+    $resultado=usuariosViculadoProfessor($id_professor);
+    return $resultado;
+}

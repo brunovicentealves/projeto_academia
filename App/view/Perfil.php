@@ -13,7 +13,7 @@ require_once '../Controller/ControllerPerfil.php';
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Usuário</title>
+    <title>Perfil</title>
 </head>
 <body>
 <?php include('../view/Menu.php') ?>
@@ -44,7 +44,7 @@ if(isset( $_SESSION['mensagem-alterar'])) {
         <div class="form-group col-md-1">
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" style="background-color: #FF7F50;" class="btn btn-secondary"  data-toggle="modal" data-target="#exampleModal">Alterar Senha</button>
-                <a href="../view/AtualizaCadastro.php" type="button" style="background-color: #FF7F50;"class="btn btn-secondary">Atualizar Cadastros</a>
+                <a href="../view/AtualizaCadastro.php" type="button" style="background-color: #FF7F50;"class="btn btn-secondary">Editar Cadastros</a>
             </div>
         </div>
     <?php
@@ -112,6 +112,8 @@ if(isset( $_SESSION['mensagem-alterar'])) {
                 </button>
             </div>
             <div class="modal-body">
+                <h6 class="text-center">Senha com mínimo de 4 digitos</h6>
+                <br>
                 <form  name="valida_Senha" action="../Controller/ControllerPerfil.php" method="post">
                     <div class="row">
                         <div class="col">

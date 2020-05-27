@@ -4,7 +4,7 @@ require_once 'Conexao.php';
 
 
 // salva usuario no sistema
-function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone){
+function salveUsuario($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$telefone){
     try {
         $pdo=conexao();
 
@@ -32,8 +32,8 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
         return $e->getMessage();
     }
 }
-
-function RecuperaSenha($nome,$email,$senha){
+// recupera senha do aluno
+function RecuperaSenhaAluno($nome,$email,$senha){
 
     try {
 
@@ -57,8 +57,8 @@ function RecuperaSenha($nome,$email,$senha){
     }
 
 }
-
-function BuscaEmail($nome,$email,$teste){
+// busca o email cadastrado do aluno
+function BuscaEmailAluno($nome,$email,$teste){
     try {
 
         $pdo=conexao();
@@ -95,6 +95,7 @@ function buscarUsuario($id_professor){
     }
 }
 
+// busca usuario pelo id do usuario
 function buscarUsuarioId($id){
     $pdo=conexao();
     $stmt = $pdo->prepare("SELECT nome_usuario,sobrenome_usuario  FROM usuario  WHERE id_usuario=:id_usuario");
@@ -111,4 +112,19 @@ function buscarUsuarioId($id){
     }
 
 
+}
+
+// retorna a quantidade  total de usuarios cadastrado no sistema
+function  quantidadeUsuariosTotal(){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT * FROM usuario ");
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $total = count($users);
+
+    if($total!= NULL){
+        return intval($total);
+    }else{
+        return 0;
+    }
 }

@@ -5,7 +5,15 @@ require_once '../Controller/ControllerPerfil.php';
 
 ?>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark"  style="background-color: #FF7F50;">
-    <a class="navbar-brand" href="Painel.php"><img src="../../images/Logo-sistema.png"></a>
+    <?php
+    // dependendo do tipo de acesso ele te direciona para painel adm diferente.
+    if($_SESSION['acesso']=="usuario"){
+        $painel="PainelAluno.php";
+    }else{
+        $painel="PainelAdm.php";
+    }
+    ?>
+    <a class="navbar-brand" href="<?=$painel?>"><img src="../../images/Logo-sistema.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,13 +42,13 @@ require_once '../Controller/ControllerPerfil.php';
             }
             ?>
             <?php
-            if($_SESSION['acesso']=="usuario"){
+            /**if($_SESSION['acesso']=="usuario"){
                 ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="../view/AvaliacaoUsuario.php">Avaliações</a>
                 </li>
                 <?php
-            }
+            }**/
             ?>
             <?php
             if($_SESSION['acesso']=="usuario"){
@@ -51,16 +59,6 @@ require_once '../Controller/ControllerPerfil.php';
                 <?php
             }
             ?>
-            <?php
-            if($_SESSION['acesso']=="usuario"){
-                ?>
-                <li class="nav-item active">
-                    <a class="nav-link" href="CadastroTreino.php">treino</a>
-                </li>
-                <?php
-            }
-            ?>
-
 
         </ul>
         <div class="btn-group dropleft">

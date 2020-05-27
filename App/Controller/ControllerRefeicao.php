@@ -15,6 +15,24 @@ if($resultado==True){
     $resultado=buscarRefeicao($nome_refeicao,$descricao_refeicao,$data_criacao,$id_ficha);
     header("Location:../view/CadastroAlimento.php?id=$resultado");
 }
+}elseif (isset($_GET['acao']) && $_GET['acao']=="editar"){
+    $id_refeicao= $_GET['id'];
+
+    header("Location:../view/EditarDieta.php?id=$id_refeicao");
+
+}elseif (isset($_GET['acao']) && $_GET['acao']=="atualizar"){
+   $id_refeicao=$_GET['id'];
+    $nome_refeicao=$_POST['nomeReceicao'];
+    $descricao_refeicao=$_POST['descricaoRefeicao'];
+    $data_criacao= date('y/m/d');
+
+    $resultado=atualizarRefeicao($id_refeicao,$nome_refeicao,$descricao_refeicao,$data_criacao);
+
+    if($resultado== true){
+        $_SESSION['mensagem_avaliacao']="Atualizado o dado com sucesso";
+
+        header("Location:../view/FichaAluno.php");
+    }
 }
 
 // busca todas as refeições
@@ -23,3 +41,11 @@ function buscarTodasRefeicao(){
     $resultado= buscarIdTodasRefeicoes($id_ficha);
     return $resultado;
 }
+
+function buscarTodoIdRefeicao($id_refeicao){
+    $id_ficha=$_SESSION['id_ficha'];
+    $resultado= buscarTodoRefeicaoId($id_refeicao);
+    return $resultado;
+}
+
+

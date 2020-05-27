@@ -34,7 +34,7 @@ if(isset($usuario) && isset($senha)){
 
         // pega o id da ficha e salva na session
         $_SESSION['id_ficha']=$id[1];
-        header("Location:../view/Painel.php");
+        header("Location:../view/PainelAluno.php");
 
     }else{
         $_SESSION['mensagem']=$resultado;

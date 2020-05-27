@@ -11,7 +11,7 @@ require_once '../Controller/ControllerAlimento.php';
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercicios</title>
+    <title>Alimento</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -32,7 +32,7 @@ require_once '../Controller/ControllerAlimento.php';
 <br>
 <div class="container">
     <?php $id=$_GET['id'];
-    $_SESSION['id_treino']=$id;
+    $_SESSION['id_refeicao']=$id;
     ?>
     <form name="form1" action="../Controller/ControllerAlimento.php?id=<?=$id?>&acao=cadastro"" method="post">
         <div class="row">
@@ -50,7 +50,7 @@ require_once '../Controller/ControllerAlimento.php';
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Horario </label>
-                        <input name="horario" type="text"  required class="form-control" id="horario" >
+                        <input name="horario" type="time"  required class="form-control" id="horario" >
                     </div>
                 </div>
                 <div class="form-row">
@@ -75,7 +75,9 @@ require_once '../Controller/ControllerAlimento.php';
         <thead>
         <tr>
             <th scope="col" style='width: 30%;background-color: #FF7F50;'>Nome  </th>
-            <th scope="col" style='width: 5%;background-color: #FF7F50;'>Deletar  </th>
+            <th scope="col" style='width: 30%;background-color: #FF7F50;'>Qtd </th>
+            <th scope="col" style='width: 300%;background-color: #FF7F50;'>Horario  </th>
+            <th scope="col" style='width: 5%;background-color: #FF7F50;'>Excluir  </th>
             <th scope="col" style='width: 5%;background-color: #FF7F50;'>Editar  </th>
 
         </tr>
@@ -88,8 +90,10 @@ require_once '../Controller/ControllerAlimento.php';
                 <tbody>
                 <tr>
                     <td><?=$linhas['alimento']?></td>
+                    <td><?=$linhas['quantidade']?></td>
+                    <td><?=$linhas['horario_refeicao']?></td>
                     <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_alimento']?>&acao=excluir"><img title="editar Avaliacao"src="../../images/delete.png"></a></td>
-                    <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_alimento']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
+                    <td class="text-center">  <a href="../Controller/ControllerAlimento.php?id=<?=$linhas['id_alimento']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
                 </tr>
                 </tbody>
 

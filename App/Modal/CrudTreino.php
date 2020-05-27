@@ -93,6 +93,6 @@ function  atualizarTreino($id_treino,$nome_treino,$descricao_treino,$data_criaca
     if($stmt != NULL){
         return true;
     }
-
-
 }
+
+

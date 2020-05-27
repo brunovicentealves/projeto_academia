@@ -12,8 +12,8 @@ $senha = md5($novaSenha);
 $teste = false;
 
 
-BuscaEmail($nome,$email,$teste);
-$resultado = BuscaEmail($nome,$email,$teste);
+BuscaEmailAluno($nome,$email,$teste);
+$resultado = BuscaEmailAluno($nome,$email,$teste);
  if ($resultado == 2){
 
      // Incluir classe PHPMailer
@@ -41,7 +41,7 @@ $resultado = BuscaEmail($nome,$email,$teste);
 
         if ($Mailer->Send()){
             $erro = false;
-            $_SESSION['mensagem']=RecuperaSenha($nome,$email,$senha);
+            $_SESSION['mensagem']=RecuperaSenhaAluno($nome,$email,$senha);
             header("Location:../view/LoginUsuario.php");
         } else {
             $_SESSION['mensagem']="Problema para Enviar o E-mail";

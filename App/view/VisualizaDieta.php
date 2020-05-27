@@ -2,7 +2,9 @@
 require_once '../Controller/Session.php';
 require_once '../Controller/Seguranca.php';
 require_once '../Controller/ControllerPerfil.php';
-require_once '../Controller/ControllerTreino.php';
+require_once '../Controller/ControllerRefeicao.php';
+require_once '../Controller/ControllerAlimento.php';
+
 ?>
 <!doctype html>
 <html lang="br">
@@ -11,7 +13,7 @@ require_once '../Controller/ControllerTreino.php';
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercicios</title>
+    <title>Visualizar Treino</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -25,35 +27,59 @@ require_once '../Controller/ControllerTreino.php';
 <br>
 <br>
 <div align="center">
-    <h2> Editar Treino </h2>
+    <h2> Visualização Dieta </h2>
 </div>
 <div class="container">
     <?php
-     $id_treino=$_GET['id'];
-    $resultado=buscarIdTreinoAtualizar($id_treino)?>
-    <form name="form1" action="../Controller/ControllerTreino.php?id=<?=$id_treino?>&acao=atualizar" method="post">
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="inputEmail4">Nome Treino: </label>
+    $id_refeicao=$_GET['id'];
+    $resultado=buscarTodoIdRefeicao($id_refeicao)?>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="inputEmail4">Nome Dieta: </label>
+            <fieldset disabled>
                 <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino"  value="<?=$resultado[0]?>">
-            </div>
+            </fieldset>
         </div>
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="inputEmail4">Descrição do Treino </label>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="inputEmail4">Descrição da Dieta:</label>
+            <fieldset disabled>
                 <textarea name="descricaoTreino"   class="form-control"  ><?=$resultado[1]?></textarea>
-            </div>
+            </fieldset>
         </div>
-        <br>
-        <div class="row">
-            <div class="form-group col-md-8">
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="table">
+                <table class="table-striped table-responsive-xl" id="minhaTabela">
 
-            </div>
-            <div class="form-group col-md-4">
-                <button type="submit"  style="background-color: #FF7F50;" class="btn btn-dark btn-lg btn-block">Atualizar</button>
+                    <thead>
+                    <tr>
+                        <th  class="table-dark" style='width: 20%;background-color: #FF7F50;'>Nome</th>
+                        <th class="table-dark" style='width: 8%;background-color: #FF7F50;'>Quantidade</th>
+                        <th class="table-dark" style='width: 8%;background-color: #FF7F50;'>Horario </th>
+
+                    </tr>
+                    </thead>
+                    <?php  $resultado=buscarAlimentos($id_refeicao);
+                    if(isset($resultado)){
+                        foreach ($resultado as $linhas){?>
+                            <tbody>
+                            <tr>
+                                <td><?=$linhas['alimento']?></td>
+                                <td><?=$linhas['quantidade']?></td>
+                                <td><?=$linhas['horario_refeicao']?></td>
+
+
+                            </tr>
+                            </tbody>
+                        <?php }}?>
+                </table>
             </div>
         </div>
-    </form>
+    </div>
 </div>
 <br>
 <br>
@@ -68,3 +94,5 @@ require_once '../Controller/ControllerTreino.php';
 
 
 
+
+}

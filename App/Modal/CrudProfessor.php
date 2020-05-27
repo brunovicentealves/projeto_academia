@@ -12,8 +12,8 @@ function findall($pdo){
     var_dump($users);
 }
 
-
-function salve ($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref,$telefone){
+// cadastra o professor  no sistema
+function salveProfessor($nome,$sobrenome,$email,$senha,$endereco,$numero,$cep,$complemento,$pais,$cidade,$estado,$cref,$telefone){
     try {
         $pdo=conexao();
 
@@ -42,12 +42,10 @@ VALUES (:valor1,:valor2,:valor3,:valor4,:valor5,:valor6,:valor7,:valor8,:valor9,
 
         return $e->getMessage();
     }
-
-
 }
 
-
-function RecuperaSenha($nome,$email,$senha){
+// recupera a  senha do professor
+function RecuperaSenhaProfessor($nome,$email,$senha){
 
     try {
 
@@ -72,7 +70,8 @@ function RecuperaSenha($nome,$email,$senha){
 
 }
 
-function BuscaEmail($nome,$email,$teste){
+// busca o email do professor
+function BuscaEmailProfessor($nome,$email,$teste){
     try {
 
         $pdo=conexao();
@@ -95,25 +94,7 @@ function BuscaEmail($nome,$email,$teste){
     }
 }
 
-function excluir($pdo,$id){
-    try {
-
-        $deletar = $pdo->prepare("DELETE FROM usuario WHERE id_user= :id");
-
-        $deletar->bindValue(":id", $id);
-
-        $deletar->execute();
-
-        return"Deletado Com sucesso";
-
-    }catch (PDOException $e){
-
-        return $e->getMessage();
-    }
-
-
-}
-
+// atualiza as informações do professor
 function atualizar($pdo,$usuario,$senha,$id){
 
     try {
@@ -133,5 +114,20 @@ function atualizar($pdo,$usuario,$senha,$id){
     }catch (PDOException $e){
 
         return $e->getMessage();
+    }
+}
+
+
+function  quantidadeProfessorTotal(){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT * FROM Professor ");
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $total = count($users);
+
+    if($total!= NULL){
+        return intval($total);
+    }else{
+        return 0;
     }
 }

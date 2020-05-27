@@ -22,7 +22,11 @@ if(isset($_GET['acao']) && $_GET['acao']== "index" && isset($_GET['id'])){
 }
 
 function dadosusuario(){
-    $id=$_SESSION['id_aluno_ficha'];
+    if(isset($_SESSION['id_aluno_ficha'])){
+        $id=$_SESSION['id_aluno_ficha'];
+    }else{
+        $id=$_SESSION['id_usuario'];
+    }
  $resultado= buscarUsuarioId($id);
 return $resultado;
 }

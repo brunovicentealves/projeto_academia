@@ -2,6 +2,8 @@
 require_once '../Controller/Session.php';
 require_once '../Controller/Seguranca.php';
 require_once '../Controller/ControllerPerfil.php';
+require_once '../Controller/ControllerTreino.php';
+require_once '../Controller/ControllerExercicio.php';
 ?>
 <!doctype html>
 <html lang="br">
@@ -27,11 +29,14 @@ require_once '../Controller/ControllerPerfil.php';
     <h2> Visualização Treino </h2>
 </div>
 <div class="container">
+    <?php
+    $id_treino=$_GET['id'];
+         $resultado=buscarTodosTreino($id_treino)?>
         <div class="row">
             <div class="form-group col-md-12">
                 <label for="inputEmail4">Nome Treino: </label>
                 <fieldset disabled>
-                <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino" >
+                <input name="nomeTreino" type="text"  required class="form-control" id="nomeTreino"  value="<?=$resultado[0]?>">
                 </fieldset>
             </div>
         </div>
@@ -39,7 +44,7 @@ require_once '../Controller/ControllerPerfil.php';
             <div class="form-group col-md-12">
                 <label for="inputEmail4">Descrição do Treino </label>
                 <fieldset disabled>
-                <textarea name="descricaoTreino"   class="form-control"  ></textarea>
+                <textarea name="descricaoTreino"   class="form-control"  ><?=$resultado[1]?></textarea>
                 </fieldset>
             </div>
         </div>
@@ -51,21 +56,25 @@ require_once '../Controller/ControllerPerfil.php';
 
                         <thead>
                         <tr>
-                            <th  class="table-dark" style='width: 10%;background-color: #FF7F50;'>Nome Exercicio</th>
-                            <th class="table-dark" style='width: 15%;background-color: #FF7F50;'>Serie </th>
-                            <th class="table-dark" style='width: 10%;background-color: #FF7F50;'>Descrição</th>
+                            <th  class="table-dark" style='width: 20%;background-color: #FF7F50;'>Nome Exercicio</th>
+                            <th class="table-dark" style='width: 8%;background-color: #FF7F50;'>Serie </th>
+                            <th class="table-dark" style='width: 8%;background-color: #FF7F50;'>Repetições </th>
+                            <th class="table-dark" style='width: 20%;background-color: #FF7F50;'>Descrição</th>
                         </tr>
                         </thead>
+                        <?php  $resultado=buscarTodosExercicio($id_treino);
+                        if(isset($resultado)){
+                            foreach ($resultado as $linhas){?>
+                        <tbody>
+                        <tr>
+                            <td><?=$linhas['nome_exercicio']?></td>
+                            <td><?=$linhas['serie']?></td>
+                            <td><?=$linhas['repeticao']?></td>
+                            <td><?=$linhas['descricao_exercicio']?></td>
 
-
-                                <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-
-                                </tr>
-                                </tbody>
+                        </tr>
+                        </tbody>
+                        <?php }}?>
                     </table>
                 </div>
             </div>
@@ -84,3 +93,5 @@ require_once '../Controller/ControllerPerfil.php';
 
 
 
+
+}

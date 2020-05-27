@@ -28,7 +28,7 @@ function CadastroAlimento($nome_aliemento,$quantidade,$horario,$id_refeicao){
 // busca todos os alimentos
 function buscarTodosAlimentos($id_refeicao){
     $pdo=conexao();
-    $stmt = $pdo->prepare("SELECT * FROM alimento WHERE id_refeicao=:valor1");
+    $stmt = $pdo->prepare("SELECT * FROM alimento WHERE id_refeicao=:valor1 order by horario_refeicao ");
     $stmt->bindValue(":valor1",$id_refeicao);
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -39,4 +39,44 @@ function buscarTodosAlimentos($id_refeicao){
     }else{
         return null;
     }
+}
+
+
+function buscarAlimentoId($id_alimento){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT alimento,quantidade,horario_refeicao FROM alimento WHERE id_alimento=:valor1 limit 1");
+    $stmt->bindValue(":valor1",$id_alimento);
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach( $users as $user){
+        $alimento=$user['alimento'];
+        $quantidade=$user['quantidade'];
+        $horario=$user['horario_refeicao'];
+
+    }
+
+    if($users!= NULL){
+        return array($alimento,$quantidade,$horario);
+    }
+
+
+}
+
+
+function atualizarAlimento($id_alimento,$nome_alimento,$quantidade,$horario){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("UPDATE alimento SET alimento=:valor1,quantidade=:valor2,horario_refeicao=:valor3  WHERE id_alimento=:valor4");
+
+    $stmt->bindParam(':valor1', $nome_alimento);
+    $stmt->bindParam(':valor2', $quantidade);
+    $stmt->bindParam(':valor3', $horario);
+    $stmt->bindParam(':valor4', $id_alimento);
+
+    $stmt->execute();
+    if($stmt != NULL){
+        return true;
+    }
+
+
 }

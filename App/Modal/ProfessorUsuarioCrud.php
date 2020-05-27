@@ -33,3 +33,21 @@ function vincularAlunoProfessor($id_professor,$id_usuario){
         return $e->getMessage();
     }
 }
+
+// retorna total de usuários vinculados ao  determinado professor.
+function usuariosViculadoProfessor($id_professor){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("SELECT * FROM professor_usuario WHERE id_professor=:valor1");
+    $stmt->bindValue(":valor1",$id_professor);
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $total = count($users);
+
+    if($total!= NULL){
+        return intval($total);
+    }else{
+        return 0;
+    }
+
+
+}
