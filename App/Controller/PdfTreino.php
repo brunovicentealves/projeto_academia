@@ -1,5 +1,5 @@
 <?php
-include '../Controller/fpdf/fpdf.php';
+include '../Controller/fpdf182/fpdf.php';
 require_once '../Modal/CrudExercicio.php';
 require_once '../Modal/CrudTreino.php';
 
