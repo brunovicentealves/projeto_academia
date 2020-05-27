@@ -28,15 +28,15 @@ $pdf->Cell(60,7,"Alimento:",1,0,"C");
 $pdf->Cell(60,7,"Quantidade:",1,0,"C");
 $pdf->Cell(60,7,utf8_decode("Horario:"),1,0,"C");
 $pdf->Ln();
-
-$resultado2=buscarTodosAlimentos($id_refeicao);
-foreach ($resultado2 as $linhas){
-    $pdf->Cell(60,7,utf8_decode($linhas['alimento']),1,0,"C");
-    $pdf->Cell(60,7,utf8_decode($linhas['quantidade']),1,0,"C");
-    $pdf->Cell(60,7,utf8_decode($linhas['horario_refeicao']),1,0,"C");
-    $pdf->Ln();
+if(isset($resultado2) && $resultado2== null) {
+    $resultado2 = buscarTodosAlimentos($id_refeicao);
+    foreach ($resultado2 as $linhas) {
+        $pdf->Cell(60, 7, utf8_decode($linhas['alimento']), 1, 0, "C");
+        $pdf->Cell(60, 7, utf8_decode($linhas['quantidade']), 1, 0, "C");
+        $pdf->Cell(60, 7, utf8_decode($linhas['horario_refeicao']), 1, 0, "C");
+        $pdf->Ln();
+    }
 }
-
 $pdf->Output();
 
 

@@ -31,6 +31,7 @@ $pdf->Cell(50,7,utf8_decode("Descrição"),1,0,"C");
 $pdf->Ln();
 
 $resultado2=buscarTodosExercicio($id_treino);
+if(isset($resultado2) && $resultado2== null){
 foreach ($resultado2 as $linhas){
     $pdf->Cell(50,7,utf8_decode($linhas['nome_exercicio']),1,0,"C");
     $pdf->Cell(40,7,utf8_decode($linhas['serie']),1,0,"C");
@@ -38,7 +39,7 @@ foreach ($resultado2 as $linhas){
     $pdf->Cell(50,7,utf8_decode($linhas['descricao_exercicio']),1,0,"C");
     $pdf->Ln();
 }
-
+}
 $pdf->Output();
 
 
