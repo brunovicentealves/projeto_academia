@@ -23,7 +23,7 @@ require_once '../Controller/ControllerCrudUsuario.php';
 <?php
 if(isset($_SESSION['mensagem'])) {
     ?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
         <?php
         echo $_SESSION['mensagem'];
         unset($_SESSION['mensagem']);
@@ -45,10 +45,10 @@ if(isset($_SESSION['mensagem'])) {
 
             <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">Nome usuario</th>
-                <th scope="col">Email usuario</th>
-                <th scope="col">Ações</th>
+                <th scope="col" style='width: 5%;background-color: #FF7F50;'>Nome usuario</th>
+                <th scope="col" style='width: 5%;background-color: #FF7F50;'>Email usuario</th>
+                <th scope="col " style='width: 1%;background-color: #FF7F50;'>Ficha Aluno</th>
+                <th scope="col " style='width: 1%;background-color: #FF7F50;'>Desvincular</th>
             </tr>
             </thead>
             <!-- tras consulta do usuarios não vinculados ao professor-->
@@ -58,10 +58,10 @@ if(isset($_SESSION['mensagem'])) {
                     ?>
                     <tbody>
                     <tr>
-                        <td><?=$linhas['id_usuario']?></td>
                         <td><?=$linhas['nome_usuario']?></td>
                         <td><?=$linhas['email_usuario']?></td>
-                        <td><a href="../Controller/ControllerFichaUsuario.php?acao=index&id=<?=$linhas['id_usuario']?>" class="btn btn-secondary">Ficha do Aluno</a></td>
+                        <td ><a href="../Controller/ControllerFichaUsuario.php?acao=index&id=<?=$linhas['id_usuario']?>" ><img title="Ficha do Aluno"src="../../images/ficha_usuario.png"></a></td>
+                        <td ><a href="../Controller/ControllerFichaUsuario.php?acao=excluir&id=<?=$linhas['id_usuario']?>" ><img title="Desvincular aluno ao Professor"src="../../images/desvinculo.png"></a></td>
                     </tr>
                     </tbody>
 

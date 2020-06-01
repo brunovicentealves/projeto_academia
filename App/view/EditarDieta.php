@@ -34,13 +34,13 @@ require_once '../Controller/ControllerRefeicao.php';
     <form name="form1" action="../Controller/ControllerRefeicao.php?id=<?=$id_refeicao?>&acao=atualizar" method="post">
         <div class="row">
             <div class="form-group col-md-12">
-                <label for="inputEmail4">Nome Treino: </label>
+                <label for="inputEmail4">Nome Dieta: </label>
                 <input name="nomeReceicao" type="text"  required class="form-control" id="nomeTreino"  value="<?=$resultado[0]?>">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-12">
-                <label for="inputEmail4">Descrição do Treino </label>
+                <label for="inputEmail4">Descrição da Dieta </label>
                 <textarea name="descricaoRefeicao"   class="form-control"  ><?=$resultado[1]?></textarea>
             </div>
         </div>

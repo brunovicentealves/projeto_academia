@@ -19,6 +19,17 @@ if(isset($_GET['acao']) && $_GET['acao']== "index" && isset($_GET['id'])){
         // retorna para tela de ficha do aluno para que ele possa mostrar as avaliações e treinos e dietas atraves do id do aluno
        header("Location:../view/FichaAluno.php");
 
+}elseif(isset($_GET['acao'])&& $_GET['acao']=="excluir"){
+    $id=$_GET['id'];
+
+    $resultado=desvincularProfessorUsuario($id);
+
+if($resultado == true){
+    $_SESSION['mensagem']="Desviculado com sucesso";
+    header("Location:../view/MeuAluno.php");
+}
+    $_SESSION['teste']=$resultado;
+    header("Location:../view/MeuAluno.php");
 }
 
 function dadosusuario(){

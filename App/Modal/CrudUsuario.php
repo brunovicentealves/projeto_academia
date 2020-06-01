@@ -128,3 +128,18 @@ function  quantidadeUsuariosTotal(){
         return 0;
     }
 }
+
+function desvincularProfessorUsuario($id){
+    try {
+
+        $pdo=conexao();
+        $stmt = $pdo->prepare("DELETE FROM professor_usuario WHERE id_usuario=:id");
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+
+        return true;
+    }catch (PDOException $ex){
+
+        return $ex;
+    }
+}

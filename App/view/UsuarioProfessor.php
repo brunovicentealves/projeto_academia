@@ -24,7 +24,7 @@ require_once '../Controller/ControllerProfessorUsuario.php';
 <?php
 if(isset($_SESSION['mensagem'])) {
     ?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
         <?php
         echo $_SESSION['mensagem'];
         unset($_SESSION['mensagem']);
@@ -46,10 +46,9 @@ if(isset($_SESSION['mensagem'])) {
 
         <thead>
         <tr>
-            <th scope="col">id</th>
-            <th scope="col">Nome usuario</th>
-            <th scope="col">Email usuario</th>
-            <th scope="col">Ações</th>
+            <th scope="col" style='width: 5%;background-color: #FF7F50;'>Nome usuario</th>
+            <th scope="col" style='width: 5%;background-color: #FF7F50;'>Email usuario</th>
+            <th scope="col" style='width: 5%;background-color: #FF7F50;'>Ações</th>
         </tr>
         </thead>
         <!-- tras consulta do usuarios não vinculados ao professor-->
@@ -59,7 +58,6 @@ if(isset($_SESSION['mensagem'])) {
             ?>
         <tbody>
         <tr>
-            <td><?=$linhas['id_usuario']?></td>
             <td><?=$linhas['nome_usuario']?></td>
             <td><?=$linhas['email_usuario']?></td>
             <td><a href="../Controller/ControllerProfessorUsuario.php?id=<?=$linhas['id_usuario']?>" class="btn btn-secondary">Vincular</a></td>
