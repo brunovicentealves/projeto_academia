@@ -1,6 +1,7 @@
 <?php
 require_once 'Session.php';
 require_once '../Modal/CrudRefeicao.php';
+require_once '../Modal/CrudAlimento.php';
 
 //cadastro de refeicao
 if(isset($_GET['acao']) && $_GET['acao']=="cadastrar"){
@@ -33,6 +34,17 @@ if($resultado==True){
 
         header("Location:../view/FichaAluno.php");
     }
+}elseif (isset($_GET['acao']) && $_GET['acao']=="excluir"){
+    $id_refeicao=$_GET['id'];
+
+    $resultado=deletaAlimentoIdRefeicao($id_refeicao);
+
+    if($resultado == true){
+        deletarAlimentoIdRefeicao($id_refeicao);
+        $_SESSION['mensagem_avaliacao']="Deletado com sucesso";
+        header("Location:../view/FichaAluno.php");
+    }
+
 }
 
 // busca todas as refeições

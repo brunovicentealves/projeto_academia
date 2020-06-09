@@ -38,11 +38,25 @@ function buscarTodosExercicio($id_treino){
     }
 }
 
-function deletarExercicio($id){
+// função para excluir um exercicio pelo id do exercicio
+function deletarExercicio($id_exercicio){
 
     $pdo=conexao();
     $stmt = $pdo->prepare("DELETE FROM exercicio WHERE id_exercicio=:valor1");
-    $stmt->bindValue(":valor1",$id);
+    $stmt->bindValue(":valor1",$id_exercicio);
+    $stmt->execute();
+
+    return true;
+
+}
+
+
+// função para excluir um exercicio pelo id do treino
+function deletarExercicioIdTreino($id_treino){
+
+    $pdo=conexao();
+    $stmt = $pdo->prepare("DELETE FROM exercicio WHERE id_treino=:valor1");
+    $stmt->bindValue(":valor1",$id_treino);
     $stmt->execute();
 
     return true;

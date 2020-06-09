@@ -95,4 +95,16 @@ function  atualizarTreino($id_treino,$nome_treino,$descricao_treino,$data_criaca
     }
 }
 
+// função para excluir um treino pelo id do treino
+function deletarTreinoId($id_treino){
+
+    $pdo=conexao();
+    $stmt = $pdo->prepare("DELETE FROM treino WHERE id_treino=:valor1");
+    $stmt->bindValue(":valor1",$id_treino);
+    $stmt->execute();
+
+    return true;
+
+}
+
 

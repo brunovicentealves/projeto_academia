@@ -80,3 +80,26 @@ function atualizarAlimento($id_alimento,$nome_alimento,$quantidade,$horario){
 
 
 }
+
+// função a onde deleta o alimento pelo Id Refeicao
+function deletaAlimentoIdRefeicao($id_refeicao){
+    $pdo=conexao();
+    $stmt = $pdo->prepare("DELETE FROM alimento WHERE id_refeicao=:valor1");
+    $stmt->bindValue(":valor1",$id_refeicao);
+    $stmt->execute();
+
+    return true;
+
+}
+
+// função a onde deleta o alimento pelo Id Alimento
+function deletarAlimentoId($id_alimento){
+
+    $pdo=conexao();
+    $stmt = $pdo->prepare("DELETE FROM alimento WHERE id_alimento=:valor1");
+    $stmt->bindValue(":valor1",$id_alimento);
+    $stmt->execute();
+
+    return true;
+
+}

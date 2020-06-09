@@ -1,6 +1,7 @@
 <?php
 require_once 'Session.php';
 require_once '../Modal/CrudTreino.php';
+require_once '../Modal/CrudExercicio.php';
     //cadastra treinos
 if(isset($_GET['acao'] )&& $_GET['acao'] == "cadastrar"){
  $nome_treino=$_POST['nomeTreino'];
@@ -34,9 +35,17 @@ $resultado= atualizarTreino($id_treino,$nome_treino,$descricao_treino,$data_cria
     }
     header("Location:../view/FichaAluno.php");
     // visualiza os dados
+
 }elseif(isset($_GET['acao'] )&& $_GET['acao'] == "excluir"){
 
-    echo "deletar";
+    $id_treino= $_GET['id'];
+    $resultado=deletarExercicioIdTreino($id_treino);
+
+    if($resultado== true){
+        deletarTreinoId($id_treino);
+        $_SESSION['mensagem_avaliacao']="Deletado com sucesso";
+        header("Location:../view/FichaAluno.php");
+    }
 }
 
 

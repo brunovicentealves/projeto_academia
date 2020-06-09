@@ -96,3 +96,15 @@ function  atualizarRefeicao($id_refeicao,$nome_refeicao,$descricao_refeicao,$dat
         return false;
     }
 }
+
+// função a onde deleta a refeicao pelo Id Refeicao
+function deletarAlimentoIdRefeicao($id_refeicao){
+
+    $pdo=conexao();
+    $stmt = $pdo->prepare("DELETE FROM refeicao WHERE id_refeicao=:valor1");
+    $stmt->bindValue(":valor1",$id_refeicao);
+    $stmt->execute();
+
+    return true;
+
+}

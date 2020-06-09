@@ -30,8 +30,11 @@ $horario= $_POST['horario'];
 
     header("Location:../view/CadastroAlimento.php?id=$id_refeicao");
 
-
-
+}elseif (isset($_GET['acao']) && $_GET['acao']=="excluir"){
+    $id_alimento=$_GET['id'];
+    deletarAlimentoId($id_alimento);
+    $id_refeicao= $_SESSION['id_refeicao'];
+    header("Location:../view/CadastroAlimento.php?id=$id_refeicao");
 }
 
 

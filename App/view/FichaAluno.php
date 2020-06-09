@@ -210,7 +210,7 @@ if(isset($_SESSION['mensagem_avaliacao'])) {
 
                         <td><?=$linhas['nome_refeicao']?></td>
                         <td><?=$linhas['data_criacao']?></td>
-                        <td class="text-center"><a href="../Controller/ControllerAvaliacao.php?id=<?=$linhas['id_refeicao']?>&acao=excluir"><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;</td>
+                        <td class="text-center"><a href="../Controller/ControllerRefeicao.php?id=<?=$linhas['id_refeicao']?>&acao=excluir"><img  title="Excluir Avaliacao" src="../../images/delete.png"></a>&nbsp;</td>
                         <td class="text-center"> <a href="../view/VisualizaDieta.php?id=<?=$linhas['id_refeicao']?>"><img title="Visualizar Avaliacao"src="../../images/visualizar.png"></a>&nbsp;</td>
                         <td class="text-center">  <a href="../Controller/ControllerRefeicao.php?id=<?=$linhas['id_refeicao']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
                         <td class="text-center">  <a href="../view/CadastroAlimento.php?id=<?=$linhas['id_refeicao']?>"><img title="editar Avaliacao"src="../../images/adcionar.png"></a></td>

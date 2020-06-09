@@ -92,7 +92,7 @@ require_once '../Controller/ControllerAlimento.php';
                     <td><?=$linhas['alimento']?></td>
                     <td><?=$linhas['quantidade']?></td>
                     <td><?=$linhas['horario_refeicao']?></td>
-                    <td class="text-center">  <a href="../Controller/ControllerExercicio.php?id=<?=$linhas['id_alimento']?>&acao=excluir"><img title="editar Avaliacao"src="../../images/delete.png"></a></td>
+                    <td class="text-center">  <a href="../Controller/ControllerAlimento.php?id=<?=$linhas['id_alimento']?>&acao=excluir"><img title="editar Avaliacao"src="../../images/delete.png"></a></td>
                     <td class="text-center">  <a href="../Controller/ControllerAlimento.php?id=<?=$linhas['id_alimento']?>&acao=editar"><img title="editar Avaliacao"src="../../images/editar.png"></a></td>
                 </tr>
                 </tbody>
