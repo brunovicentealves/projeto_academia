@@ -36,13 +36,27 @@ require_once '../Controller/ControllerCrudProfessor.php';
     <div class="row">
         <div class="form-group col-md-2">
         </div>
+        <div class="form-group col-md-3">
+            <div class="card border border-secondary  rounded  mb-2 text-white" style="width: 18rem;background-color: #FF7F50">
+                <img class="card-img-top" src="../../images/dashboard2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <!-- traz o resultado de quantidade de alunos vinculados ao profesor-->
+                    <?php $resultado=totalUsuarioVinculadoProfessor();?>
+                    <h5><p class="card-text text-center">Meus Alunos</p></h5>
+                    <h2><p class="card-text text-center"><?=$resultado?></p></h2>
+                </div>
+            </div>
+        </div>
+        &nbsp
+        &nbsp
+        &nbsp
         <div class="form-group col-md-3 ">
             <div class="card border border-secondary  rounded   mb-2 text-white " style="width: 18rem;background-color: #FF7F50">
                 <img class="card-img-top" src="../../images/dashboard1.jpg" alt="Card image cap">
                 <div class="card-body">
                     <!-- traz o resultado de totoal de alunos cadastrados no sistema-->
                     <?php $resultado=quantidadeUsuariosCadastrados();?>
-                    <h5><p class="card-text text-center">Usuários Cadastrados</p></h5>
+                    <h5><p class="card-text text-center">Alunos Cadastrados</p></h5>
                     <h2><p class="card-text text-center"><?=$resultado?></p></h2>
                 </div>
             </div>
@@ -56,25 +70,12 @@ require_once '../Controller/ControllerCrudProfessor.php';
                 <div class="card-body">
                     <!-- traz o resultado de quantidade de alunos vinculados ao profesor-->
                     <?php $resultado=quantidadeProfessorCadastrados();?>
-                    <h5><p class="card-text text-center">Professores Cadastrados</p></h5>
+                    <h5><p class="card-text text-center">Professores</p></h5>
                     <h2><p class="card-text text-center"><?=$resultado?></p></h2>
                 </div>
             </div>
         </div>
-        &nbsp
-        &nbsp
-        &nbsp
-        <div class="form-group col-md-3">
-            <div class="card border border-secondary  rounded  mb-2 text-white" style="width: 18rem;background-color: #FF7F50">
-                <img class="card-img-top" src="../../images/dashboard2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <!-- traz o resultado de quantidade de alunos vinculados ao profesor-->
-                    <?php $resultado=totalUsuarioVinculadoProfessor();?>
-                    <h5><p class="card-text text-center">Usuários Vinculados</p></h5>
-                    <h2><p class="card-text text-center"><?=$resultado?></p></h2>
-                </div>
-            </div>
-        </div>
+
     </div>
 <br>
 <br>
