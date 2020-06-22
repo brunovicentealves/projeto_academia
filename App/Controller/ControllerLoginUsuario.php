@@ -6,8 +6,6 @@ require_once '../Modal/CrudFicha.php';
 $usuario =$_POST['usuario'];
 $senha = md5($_POST['senha']);
 
-
-
 if(isset($usuario) && isset($senha)){
         // funcao para buscar dados do usuario
     $resultado=logarUsuario($usuario,$senha);
@@ -34,7 +32,7 @@ if(isset($usuario) && isset($senha)){
 
         // pega o id da ficha e salva na session
         $_SESSION['id_ficha']=$id[1];
-        header("Location:../view/PainelAluno.php");
+        header("Location:../view/MinhafichaAluno.php");
 
     }else{
         $_SESSION['mensagem']=$resultado;

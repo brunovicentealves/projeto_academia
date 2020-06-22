@@ -2,8 +2,8 @@
 require_once 'Session.php';
 require_once '../Modal/CrudProfessor.php';
 if(isset($_GET['acao']) && $_GET['acao'] == "cadastrar" ){
-    $nome =$_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
+    $nome =strval($_POST['nome']);
+    $sobrenome = strval($_POST['sobrenome']);
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
     $endereco = $_POST['endereco'];

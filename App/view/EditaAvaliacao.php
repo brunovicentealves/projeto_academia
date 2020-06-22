@@ -150,10 +150,10 @@ if(isset($_GET['id'])){
     <script type="text/javascript">
         $("#altura").mask("0.00");
         $("#peso").mask("00.00");
-        $("#torax").mask("00.00");
-        $("#cintura").mask("00.00");
-        $("#quadril").mask("00.00");
-        $("#abdomen").mask("00.00");
+        $("#torax").mask("000.00");
+        $("#cintura").mask("000.00");
+        $("#quadril").mask("000.00");
+        $("#abdomen").mask("000.00");
         $("#antebracodireito").mask("00.00");
         $("#antebracoesquerdo").mask("00.00");
         $("#bracoesquerdo").mask("00.00");
