@@ -38,7 +38,7 @@ if(isset($_SESSION['mensagem'])) {
 }
 ?>
 <div class="text-center">
-    <h2>Usuarios Não vinculados</h2>
+    <h2>Alunos não vinculados</h2>
 </div>
 <div class="container-fluid">
     <div class="table">

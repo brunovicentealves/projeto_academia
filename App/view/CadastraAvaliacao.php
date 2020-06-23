@@ -145,7 +145,7 @@ $_SESSION['acesso']=="usuario" ? $valor="1" : $valor="2";
     </div>
     <script type="text/javascript">
         $("#altura").mask("0.00");
-        $("#peso").mask("00.00");
+        $("#peso").mask("000.00");
         $("#torax").mask("000.00");
         $("#cintura").mask("000.00");
         $("#quadril").mask("000.00");

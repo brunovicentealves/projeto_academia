@@ -27,7 +27,7 @@ require_once '../Controller/ControllerPerfil.php';
             if($_SESSION['acesso']=="professor"){
                 ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../view/UsuarioProfessor.php">Usuários</a>
+                    <a class="nav-link" href="../view/UsuarioProfessor.php">Alunos</a>
                 </li>
                 <?php
             }
